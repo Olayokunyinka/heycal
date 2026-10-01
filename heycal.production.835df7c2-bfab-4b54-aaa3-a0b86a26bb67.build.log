@@ -1,0 +1,266 @@
+2026-10-01T19:07:57.514Z	Initializing build environment...
+2026-10-01T19:07:59.648Z	Success: Finished initializing build environment
+2026-10-01T19:08:00.639Z	Cloning repository...
+2026-10-01T19:08:02.485Z	Restoring from dependencies cache
+2026-10-01T19:08:02.487Z	Restoring from build output cache
+2026-10-01T19:08:04.697Z	Detected the following tools from environment: yarn@4.5.0, npm@10.9.2, nodejs@24.18.0
+2026-10-01T19:08:05.001Z	Installing project dependencies: yarn
+2026-10-01T19:08:05.595Z	➤ YN0000: · Yarn 4.5.0
+2026-10-01T19:08:05.606Z	➤ YN0000: ┌ Resolution step
+2026-10-01T19:08:05.905Z	➤ YN0000: └ Completed in 0s 299ms
+2026-10-01T19:08:05.986Z	➤ YN0000: ┌ Fetch step
+2026-10-01T19:08:23.952Z	➤ YN0066: │ typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=8c6c40: Cannot apply hunk #1
+2026-10-01T19:08:24.702Z	➤ YN0013: │ 943 packages were added to the project (+ 1.11 GiB).
+2026-10-01T19:08:24.702Z	➤ YN0000: └ Completed in 18s 718ms
+2026-10-01T19:08:24.765Z	➤ YN0000: ┌ Link step
+2026-10-01T19:08:38.447Z	➤ YN0007: │ esbuild@npm:0.25.12 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.448Z	➤ YN0007: │ esbuild@npm:0.28.1 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.448Z	➤ YN0007: │ esbuild@npm:0.28.0 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.448Z	➤ YN0007: │ msw@npm:2.14.6 [e9393] must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.449Z	➤ YN0007: │ sharp@npm:0.34.5 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.449Z	➤ YN0007: │ @clerk/shared@npm:4.13.1 [89a86] must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.449Z	➤ YN0007: │ workerd@npm:1.20260930.2 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.449Z	➤ YN0007: │ esbuild@npm:0.25.4 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.449Z	➤ YN0007: │ unrs-resolver@npm:1.12.2 must be built because it never has been before or the last one failed
+2026-10-01T19:08:38.449Z	➤ YN0007: │ esbuild@npm:0.18.20 must be built because it never has been before or the last one failed
+2026-10-01T19:08:39.364Z	➤ YN0000: └ Completed in 14s 599ms
+2026-10-01T19:08:39.455Z	➤ YN0000: · Done with warnings in 33s 861ms
+2026-10-01T19:08:39.944Z	Executing user build command: yarn run build
+2026-10-01T19:08:42.096Z	
+2026-10-01T19:08:42.096Z	┌─────────────────────────────┐
+2026-10-01T19:08:42.096Z	│ OpenNext — Cloudflare build │
+2026-10-01T19:08:42.097Z	└─────────────────────────────┘
+2026-10-01T19:08:42.098Z	
+2026-10-01T19:08:42.199Z	App directory: /opt/buildhome/repo
+2026-10-01T19:08:42.199Z	Next.js version : 16.2.6
+2026-10-01T19:08:42.201Z	@opennextjs/cloudflare version: 1.20.1
+2026-10-01T19:08:42.201Z	@opennextjs/aws version: 4.0.2
+2026-10-01T19:08:42.201Z	WARN workerd compatibility_date: 2025-04-01, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-10-01T19:08:42.204Z	
+2026-10-01T19:08:42.213Z	┌─────────────────────────────────┐
+2026-10-01T19:08:42.213Z	│ OpenNext — Building Next.js app │
+2026-10-01T19:08:42.213Z	└─────────────────────────────────┘
+2026-10-01T19:08:42.214Z	
+2026-10-01T19:08:44.426Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-10-01T19:08:44.431Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-10-01T19:08:44.431Z	This information is used to shape Next.js' roadmap and prioritize features.
+2026-10-01T19:08:44.431Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-10-01T19:08:44.431Z	https://nextjs.org/telemetry
+2026-10-01T19:08:44.431Z	
+2026-10-01T19:08:44.448Z	Using secrets defined in .dev.vars
+2026-10-01T19:08:44.609Z	▲ Next.js 16.2.6 (Turbopack)
+2026-10-01T19:08:44.609Z	
+2026-10-01T19:08:44.633Z	⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+2026-10-01T19:08:44.687Z	  Creating an optimized production build ...
+2026-10-01T19:09:14.146Z	✓ Compiled successfully in 29.2s
+2026-10-01T19:09:14.149Z	  Running TypeScript ...
+2026-10-01T19:09:48.884Z	  Finished TypeScript in 34.7s ...
+2026-10-01T19:09:48.887Z	  Collecting page data using 1 worker ...
+2026-10-01T19:09:49.776Z	  Generating static pages using 1 worker (0/6) ...
+2026-10-01T19:09:50.059Z	  Generating static pages using 1 worker (1/6) 
+2026-10-01T19:09:50.061Z	  Generating static pages using 1 worker (2/6) 
+2026-10-01T19:09:50.061Z	  Generating static pages using 1 worker (4/6) 
+2026-10-01T19:09:50.061Z	✓ Generating static pages using 1 worker (6/6) in 285ms
+2026-10-01T19:09:50.067Z	  Finalizing page optimization ...
+2026-10-01T19:09:50.355Z	
+2026-10-01T19:09:50.357Z	Route (app)
+2026-10-01T19:09:50.358Z	┌ ○ /
+2026-10-01T19:09:50.358Z	├ ○ /_not-found
+2026-10-01T19:09:50.358Z	├ ƒ /[username]/[eventSlug]
+2026-10-01T19:09:50.358Z	├ ƒ /dashboard
+2026-10-01T19:09:50.358Z	├ ƒ /dashboard/availability
+2026-10-01T19:09:50.358Z	├ ƒ /dashboard/bookings
+2026-10-01T19:09:50.358Z	├ ƒ /dashboard/events/[id]
+2026-10-01T19:09:50.358Z	├ ○ /dashboard/events/new
+2026-10-01T19:09:50.359Z	├ ƒ /dashboard/starred
+2026-10-01T19:09:50.359Z	├ ƒ /dashboard/trash
+2026-10-01T19:09:50.359Z	├ ○ /robots.txt
+2026-10-01T19:09:50.359Z	├ ƒ /sign-in/[[...sign-in]]
+2026-10-01T19:09:50.359Z	└ ƒ /sign-up/[[...sign-up]]
+2026-10-01T19:09:50.359Z	
+2026-10-01T19:09:50.359Z	
+2026-10-01T19:09:50.359Z	ƒ Proxy (Middleware)
+2026-10-01T19:09:50.359Z	
+2026-10-01T19:09:50.360Z	○  (Static)   prerendered as static content
+2026-10-01T19:09:50.360Z	ƒ  (Dynamic)  server-rendered on demand
+2026-10-01T19:09:50.360Z	
+2026-10-01T19:09:50.646Z	
+2026-10-01T19:09:50.646Z	┌──────────────────────────────┐
+2026-10-01T19:09:50.646Z	│ OpenNext — Generating bundle │
+2026-10-01T19:09:50.646Z	└──────────────────────────────┘
+2026-10-01T19:09:50.647Z	
+2026-10-01T19:09:50.691Z	Bundling middleware function...
+2026-10-01T19:09:50.801Z	Bundling static assets...
+2026-10-01T19:09:50.805Z	Bundling cache assets...
+2026-10-01T19:09:50.819Z	Building server function: default...
+2026-10-01T19:09:54.696Z	Applying code patches: 3.611s
+2026-10-01T19:09:55.030Z	# copyPackageTemplateFiles
+2026-10-01T19:09:55.031Z	⚙️ Bundling the OpenNext server...
+2026-10-01T19:09:55.031Z	
+2026-10-01T19:09:57.241Z	▲ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+2026-10-01T19:09:57.242Z	
+2026-10-01T19:09:57.242Z	    .open-next/server-functions/default/.next/server/chunks/ssr/node_modules_08c28mi._.js:1:33829:
+2026-10-01T19:09:57.242Z	      1 │ ...lignmentOffset:F}},reset:E}},options:[w,x]}),{name:"transformOri...
+2026-10-01T19:09:57.243Z	        ╵                                 ~~~~~~~
+2026-10-01T19:09:57.243Z	
+2026-10-01T19:09:57.243Z	  The original key "options" is here:
+2026-10-01T19:09:57.243Z	
+2026-10-01T19:09:57.243Z	    .open-next/server-functions/default/.next/server/chunks/ssr/node_modules_08c28mi._.js:1:32929:
+2026-10-01T19:09:57.243Z	      1 │ ...ting"}),x=[ab],{name:"arrow",options:w,async fn(a){let{x:b,y:d,p...
+2026-10-01T19:09:57.243Z	        ╵                                 ~~~~~~~
+2026-10-01T19:09:57.243Z	
+2026-10-01T19:10:00.456Z	Worker saved in `.open-next/worker.js` 🚀
+2026-10-01T19:10:00.456Z	
+2026-10-01T19:10:00.457Z	OpenNext build complete.
+2026-10-01T19:10:00.549Z	Success: Build command completed
+2026-10-01T19:10:00.980Z	Executing user deploy command: npx wrangler deploy
+2026-10-01T19:10:02.567Z	
+2026-10-01T19:10:02.567Z	 ⛅️ wrangler 4.145.0
+2026-10-01T19:10:02.567Z	────────────────────
+2026-10-01T19:10:02.630Z	OpenNext project detected, calling `opennextjs-cloudflare deploy`
+2026-10-01T19:10:05.214Z	
+2026-10-01T19:10:05.214Z	┌──────────────────────────────┐
+2026-10-01T19:10:05.214Z	│ OpenNext — Cloudflare deploy │
+2026-10-01T19:10:05.214Z	└──────────────────────────────┘
+2026-10-01T19:10:05.214Z	
+2026-10-01T19:10:05.245Z	Using secrets defined in .dev.vars
+2026-10-01T19:10:05.608Z	Incremental cache does not need populating
+2026-10-01T19:10:05.608Z	Tag cache does not need populating
+2026-10-01T19:10:07.102Z	
+2026-10-01T19:10:07.104Z	 ⛅️ wrangler 4.145.0 (update available 4.146.0)
+2026-10-01T19:10:07.104Z	───────────────────────────────────────────────
+2026-10-01T19:10:07.112Z	
+2026-10-01T19:10:07.112Z	Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2026-10-01T19:10:12.411Z	🌀 Building list of assets...
+2026-10-01T19:10:12.412Z	✨ Read 61 files from the assets directory /opt/buildhome/repo/.open-next/assets
+2026-10-01T19:10:12.433Z	🌀 Starting asset upload...
+2026-10-01T19:10:14.394Z	🌀 Found 55 new or modified static assets to upload. Proceeding with upload...
+2026-10-01T19:10:14.395Z	+ /BUILD_ID
+2026-10-01T19:10:14.395Z	+ /_next/static/wVg2eWh7eWD4NLLA_YqbO/_buildManifest.js
+2026-10-01T19:10:14.396Z	+ /file.svg
+2026-10-01T19:10:14.396Z	+ /_next/static/wVg2eWh7eWD4NLLA_YqbO/_clientMiddlewareManifest.js
+2026-10-01T19:10:14.396Z	+ /globe.svg
+2026-10-01T19:10:14.396Z	+ /_next/static/chunks/01xlw8hd842-c.js
+2026-10-01T19:10:14.396Z	+ /_next/static/media/8fcf71678f67d0c5-s.0kn0u2cosumsr.woff2
+2026-10-01T19:10:14.397Z	+ /_next/static/chunks/0vgq1c-rp0sho.js
+2026-10-01T19:10:14.397Z	+ /_next/static/chunks/0w.s_c14~j_l_.js
+2026-10-01T19:10:14.397Z	+ /_next/static/media/f7d6090e8b3debad-s.00qosz~21_9iq.woff2
+2026-10-01T19:10:14.397Z	+ /_next/static/chunks/05cb37z0kpq1b.js
+2026-10-01T19:10:14.397Z	+ /_next/static/chunks/0zsnp7s68u~oy.js
+2026-10-01T19:10:14.397Z	+ /_next/static/media/fad568eea626db0e-s.04s-lri-1fnua.woff2
+2026-10-01T19:10:14.398Z	+ /_next/static/chunks/0l2do3lp1zpe7.js
+2026-10-01T19:10:14.398Z	+ /_next/static/chunks/15.kq8lz29de6.js
+2026-10-01T19:10:14.398Z	+ /_next/static/chunks/0eodk4ul8158-.js
+2026-10-01T19:10:14.399Z	+ /_next/static/chunks/0j4~i57vliu8p.js
+2026-10-01T19:10:14.399Z	+ /_next/static/chunks/0jik18iub2ti-.js
+2026-10-01T19:10:14.399Z	+ /_next/static/chunks/110q6k5sdl4es.js
+2026-10-01T19:10:14.399Z	+ /_next/static/wVg2eWh7eWD4NLLA_YqbO/_ssgManifest.js
+2026-10-01T19:10:14.399Z	+ /_next/static/chunks/0d929hzchavr-.js
+2026-10-01T19:10:14.399Z	+ /_next/static/chunks/0ti1jj0~r2~d2.js
+2026-10-01T19:10:14.399Z	+ /_next/static/chunks/0vpghv5738~a2.js
+2026-10-01T19:10:14.399Z	+ /next.svg
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/0ze4gu236oq96.js
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/turbopack-0xyj0a7vqsflf.js
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/0utcy-3w2gc-j.js
+2026-10-01T19:10:14.400Z	+ /_next/static/media/62d4b50592542c9f-s.0id408x23fv8q.woff2
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/0ybb3i6tk22zq.js
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/0~q.d4g2e3xgj.js
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/08vprte6ponnt.js
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/0w_8cfq4wpilx.js
+2026-10-01T19:10:14.400Z	+ /_next/static/chunks/0pqt~8bl3ukh4.js
+2026-10-01T19:10:14.401Z	+ /_next/static/chunks/16pljiw23dhje.js
+2026-10-01T19:10:14.401Z	+ /_next/static/chunks/12dv-g~2n1e0u.js
+2026-10-01T19:10:14.401Z	+ /_next/static/chunks/0khn8j1n7m76u.css
+2026-10-01T19:10:14.401Z	+ /_next/static/chunks/03~yq9q893hmn.js
+2026-10-01T19:10:14.401Z	+ /vercel.svg
+2026-10-01T19:10:14.401Z	+ /window.svg
+2026-10-01T19:10:14.401Z	+ /_next/static/chunks/0vf9kjd8scxhs.js
+2026-10-01T19:10:14.401Z	+ /_next/static/chunks/0fs.g077dsp2~.js
+2026-10-01T19:10:14.402Z	+ /_next/static/media/38772d1e0cde909c-s.06sf8d84-9n3w.woff2
+2026-10-01T19:10:14.402Z	+ /_next/static/chunks/160c1jr~9lg87.js
+2026-10-01T19:10:14.403Z	+ /_next/static/media/a0ffaa6a9384d9d3-s.0rpo5i9-tpup~.woff2
+2026-10-01T19:10:14.403Z	+ /_next/static/media/ccee61546c0358b7-s.17kgvx8~8.fj6.woff2
+2026-10-01T19:10:14.403Z	+ /_next/static/chunks/05krapdmesr00.js
+2026-10-01T19:10:14.403Z	+ /favicon.ico
+2026-10-01T19:10:14.403Z	+ /_next/static/media/572c13468b8cff87-s.0k68dgt5gi4w6.woff2
+2026-10-01T19:10:14.403Z	+ /_next/static/chunks/0ubli3-u35u90.js
+2026-10-01T19:10:14.404Z	+ /_next/static/media/ce62453a442c7f35-s.p.0333ktddfbsxy.woff2
+2026-10-01T19:10:14.404Z	+ /_next/static/chunks/0ap.fjcbkcfih.js
+2026-10-01T19:10:14.404Z	+ /_next/static/chunks/0ctsxqkhwvm8s.js
+2026-10-01T19:10:14.404Z	+ /_next/static/chunks/0mbqaldb~251x.js
+2026-10-01T19:10:14.404Z	+ /_next/static/chunks/05d4ryy2f4.gd.js
+2026-10-01T19:10:14.404Z	+ /_next/static/chunks/0dhbonb24w49c.js
+2026-10-01T19:10:15.840Z	Uploaded 18 of 55 assets
+2026-10-01T19:10:15.987Z	Uploaded 37 of 55 assets
+2026-10-01T19:10:16.102Z	Uploaded 55 of 55 assets
+2026-10-01T19:10:16.102Z	✨ Success! Uploaded 55 files (1 already uploaded) (1.71 sec)
+2026-10-01T19:10:16.102Z	
+2026-10-01T19:10:16.613Z	Total Upload: 26948.05 KiB / gzip: 2525.27 KiB
+2026-10-01T19:10:20.119Z	Your Worker has access to the following bindings:
+2026-10-01T19:10:20.119Z	Binding                                   Resource      
+2026-10-01T19:10:20.119Z	env.WORKER_SELF_REFERENCE (calendry)      Worker        
+2026-10-01T19:10:20.119Z	env.ASSETS                                Assets        
+2026-10-01T19:10:20.119Z	
+2026-10-01T19:10:20.122Z	
+2026-10-01T19:10:20.215Z	▲ [WARNING] Failed to match Worker name. Your config file is using the Worker name "calendry", but the CI system expected "heycal". Overriding using the CI provided Worker name. Workers Builds connected builds will attempt to open a pull request to resolve this config name mismatch.
+2026-10-01T19:10:20.215Z	
+2026-10-01T19:10:20.215Z	
+2026-10-01T19:10:20.215Z	▲ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+2026-10-01T19:10:20.215Z	
+2026-10-01T19:10:20.216Z	    .open-next/server-functions/default/handler.mjs:531:121095:
+2026-10-01T19:10:20.216Z	      531 │ ...nmentOffset:F2}},reset:E3}},options:[w2,x2]}),{name:"transform...
+2026-10-01T19:10:20.216Z	          ╵                                ~~~~~~~
+2026-10-01T19:10:20.216Z	
+2026-10-01T19:10:20.216Z	  The original key "options" is here:
+2026-10-01T19:10:20.216Z	
+2026-10-01T19:10:20.216Z	    .open-next/server-functions/default/handler.mjs:531:120071:
+2026-10-01T19:10:20.216Z	      531 │ ...ng"}),x2=[ab],{name:"arrow",options:w2,async fn(a8){let{x:b2,y...
+2026-10-01T19:10:20.216Z	          ╵                                ~~~~~~~
+2026-10-01T19:10:20.216Z	
+2026-10-01T19:10:20.216Z	
+2026-10-01T19:10:20.216Z	✘ [ERROR] A request to the Cloudflare API (/accounts/48de573ab4ac895f4002bdfe3716c263/workers/scripts/heycal/versions) failed.
+2026-10-01T19:10:20.217Z	
+2026-10-01T19:10:20.217Z	  Service binding 'WORKER_SELF_REFERENCE' references Worker 'calendry' which was not found. Verify the Worker exists in your account and that the service name in your configuration is correct. [code: 10143]
+2026-10-01T19:10:20.217Z	  To learn more about this error, visit: https://developers.cloudflare.com/workers/configuration/bindings/about-service-bindings/
+2026-10-01T19:10:20.217Z	
+2026-10-01T19:10:20.217Z	  
+2026-10-01T19:10:20.217Z	  If you think this is a bug, please open an issue at: https://github.com/cloudflare/workers-sdk/issues/new/choose
+2026-10-01T19:10:20.217Z	
+2026-10-01T19:10:20.217Z	
+2026-10-01T19:10:20.217Z	🪵  Logs were written to "/opt/buildhome/.config/.wrangler/logs/wrangler-2026-10-01_19-10-06_756.log"
+2026-10-01T19:10:20.217Z	ERROR Wrangler deploy command failed:
+2026-10-01T19:10:20.217Z	▲ [WARNING] Failed to match Worker name. Your config file is using the Worker name "calendry", but the CI system expected "heycal". Overriding using the CI provided Worker name. Workers Builds connected builds will attempt to open a pull request to resolve this config name mismatch.
+2026-10-01T19:10:20.217Z	
+2026-10-01T19:10:20.217Z	
+2026-10-01T19:10:20.218Z	▲ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	    .open-next/server-functions/default/handler.mjs:531:121095:
+2026-10-01T19:10:20.218Z	      531 │ ...nmentOffset:F2}},reset:E3}},options:[w2,x2]}),{name:"transform...
+2026-10-01T19:10:20.218Z	          ╵                                ~~~~~~~
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	  The original key "options" is here:
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	    .open-next/server-functions/default/handler.mjs:531:120071:
+2026-10-01T19:10:20.218Z	      531 │ ...ng"}),x2=[ab],{name:"arrow",options:w2,async fn(a8){let{x:b2,y...
+2026-10-01T19:10:20.218Z	          ╵                                ~~~~~~~
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	✘ [ERROR] A request to the Cloudflare API (/accounts/48de573ab4ac895f4002bdfe3716c263/workers/scripts/heycal/versions) failed.
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	  Service binding 'WORKER_SELF_REFERENCE' references Worker 'calendry' which was not found. Verify the Worker exists in your account and that the service name in your configuration is correct. [code: 10143]
+2026-10-01T19:10:20.218Z	  To learn more about this error, visit: https://developers.cloudflare.com/workers/configuration/bindings/about-service-bindings/
+2026-10-01T19:10:20.218Z	
+2026-10-01T19:10:20.218Z	  
+2026-10-01T19:10:20.219Z	  If you think this is a bug, please open an issue at: https://github.com/cloudflare/workers-sdk/issues/new/choose
+2026-10-01T19:10:20.219Z	
+2026-10-01T19:10:20.219Z	
+2026-10-01T19:10:20.219Z	🪵  Logs were written to "/opt/buildhome/.config/.wrangler/logs/wrangler-2026-10-01_19-10-06_756.log"
+2026-10-01T19:10:20.219Z	
+2026-10-01T19:10:20.273Z	
+2026-10-01T19:10:20.329Z	✘ [ERROR] 
+2026-10-01T19:10:20.329Z	
+2026-10-01T19:10:20.329Z	
+2026-10-01T19:10:20.330Z	If you think this is a bug then please create an issue at https://github.com/cloudflare/workers-sdk/issues/new/choose
+2026-10-01T19:10:20.330Z	Note that there is a newer version of Wrangler available (4.146.0). Consider checking whether upgrading resolves this error.
+2026-10-01T19:10:20.352Z	🪵  Logs were written to "/opt/buildhome/.config/.wrangler/logs/wrangler-2026-10-01_19-10-02_171.log"
+2026-10-01T19:10:20.396Z	Failed: error occurred while running deploy command
