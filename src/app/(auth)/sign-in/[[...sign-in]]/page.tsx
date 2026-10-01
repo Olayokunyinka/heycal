@@ -7,13 +7,6 @@ export default function Page() {
         path="/sign-in"
         routing="path"
         signUpUrl="/sign-up"
-        // @ts-ignore
-        additionalOAuthScopes={{
-          google: [
-            "https://www.googleapis.com/auth/calendar.readonly",
-            "https://www.googleapis.com/auth/calendar.events"
-          ]
-        }}
       />
     </div>
   );
