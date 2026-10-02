@@ -1,4 +1,4 @@
-# Calendra
+# Heycal
 
 A modern scheduling platform — a Calendly-style app where users create event types, publish their availability, and let guests book meetings through a public link. Built with the Next.js App Router, Clerk authentication, Drizzle ORM on Turso (libSQL), and Google Calendar integration.
 

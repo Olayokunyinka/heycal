@@ -11,7 +11,7 @@ export default function LandingPage() {
           <div className="bg-[#1a73e8] p-1.5 rounded-lg text-white transition-transform group-hover:scale-105">
             <CalendarIcon size={20} />
           </div>
-          <span className="text-[22px] font-normal text-[#5f6368] tracking-tight">Calendra</span>
+          <span className="text-[22px] font-normal text-[#5f6368] tracking-tight">Heycal</span>
         </Link>
         <nav className="ml-auto flex items-center gap-4 sm:gap-8">
           <Link className="text-sm font-medium text-[#5f6368] hover:text-[#1a73e8] transition-colors" href="/sign-in">
@@ -39,13 +39,13 @@ export default function LandingPage() {
                   Scheduling <span className="text-[#1a73e8]">made simple</span>
                 </h1>
                 <p className="mx-auto max-w-[640px] text-[#5f6368] text-xl md:text-2xl font-light leading-relaxed">
-                  Calendra helps you schedule meetings without the back-and-forth emails. 
+                  Heycal helps you schedule meetings without the back-and-forth emails.
                   Connect your calendar and let people book time with you.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4 reveal-up" style={{ animationDelay: '0.2s' }}>
                 <Button asChild size="lg" className="rounded-full bg-[#1a73e8] hover:bg-[#1557b0] px-10 h-14 text-lg shadow-lg hover:shadow-xl transition-all">
-                  <Link href="/dashboard">Try Calendra for free</Link>
+                  <Link href="/dashboard">Try Heycal for free</Link>
                 </Button>
                 <Button variant="ghost" size="lg" className="rounded-full px-10 h-14 text-lg text-[#5f6368] hover:bg-gray-50 group">
                   Learn how it works <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -103,7 +103,7 @@ export default function LandingPage() {
             <div className="text-center mb-16 space-y-4 reveal-up">
               <h2 className="text-3xl md:text-5xl font-normal text-[#1f1f1f]">Everything you need to meet better</h2>
               <p className="text-[#5f6368] text-lg font-light max-w-2xl mx-auto">
-                Calendra handles the complex logic so you can focus on the conversation.
+                Heycal handles the complex logic so you can focus on the conversation.
               </p>
             </div>
             
@@ -202,7 +202,7 @@ export default function LandingPage() {
             <div className="space-y-6 max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-7xl font-normal text-white leading-tight">Ready to reclaim your time?</h2>
               <p className="text-white/80 text-xl md:text-2xl font-light">
-                Join thousands of professionals using Calendra for seamless scheduling.
+                Join thousands of professionals using Heycal for seamless scheduling.
               </p>
             </div>
             <div className="flex justify-center">
@@ -220,7 +220,7 @@ export default function LandingPage() {
           <div className="bg-[#1a73e8] p-1 rounded text-white">
             <CalendarIcon size={14} />
           </div>
-          <p className="text-sm text-[#5f6368]">© 2026 Calendra. Part of the Scheduling Network.</p>
+          <p className="text-sm text-[#5f6368]">© 2026 Heycal. Part of the Scheduling Network.</p>
         </div>
         <nav className="sm:ml-auto flex gap-10">
           <Link className="text-sm text-[#5f6368] hover:text-[#1a73e8] hover:underline underline-offset-4" href="#">

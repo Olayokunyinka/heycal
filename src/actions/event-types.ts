@@ -25,7 +25,7 @@ export async function createEventType(values: {
   slug: string;
   locationType: EventLocationType;
   locationDetails?: string;
-  questions?: string;
+  questions: string[];
 }) {
   const { userId } = await auth();
 
@@ -58,7 +58,7 @@ export async function updateEventType(id: string, values: {
   isActive: boolean;
   locationType: EventLocationType;
   locationDetails?: string;
-  questions?: string;
+  questions: string[];
 }) {
   const { userId } = await auth();
 

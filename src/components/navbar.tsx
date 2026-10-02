@@ -47,7 +47,7 @@ export function Navbar() {
               <CalendarIcon size={24} />
             </div>
             <span className="text-[22px] font-normal text-[#444746] tracking-tight">
-              Calendra
+              Heycal
             </span>
           </Link>
         </div>
@@ -60,7 +60,7 @@ export function Navbar() {
             </div>
             <input
               type="text"
-              placeholder="Search in Calendra"
+              placeholder="Search in Heycal"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search events and bookings"

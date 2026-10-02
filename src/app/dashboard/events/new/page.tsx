@@ -1,7 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { useWatch } from "react-hook-form";
+import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -25,6 +24,7 @@ import {
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { createEventType } from "@/actions/event-types";
+import { Plus, X } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -33,7 +33,9 @@ const formSchema = z.object({
   slug: z.string().min(2, "Slug must be at least 2 characters"),
   locationType: z.enum(["google_meet", "in_person", "phone", "custom", "none"]),
   locationDetails: z.string().optional(),
-  questions: z.string().optional(),
+  questions: z.array(z.object({
+    text: z.string().max(300, "Keep each question under 300 characters"),
+  })).max(10, "Add no more than 10 questions"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -49,14 +51,18 @@ export default function NewEventPage() {
       slug: "",
       locationType: "google_meet",
       locationDetails: "",
-      questions: "",
+      questions: [{ text: "" }],
     },
   });
   const locationType = useWatch({ control: form.control, name: "locationType" });
+  const questionFields = useFieldArray({ control: form.control, name: "questions" });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await createEventType(values);
+      await createEventType({
+        ...values,
+        questions: values.questions.map(({ text }) => text),
+      });
       toast.success("Event type created!");
       router.push("/dashboard");
       router.refresh();
@@ -99,7 +105,7 @@ export default function NewEventPage() {
                     <Input placeholder="30-min" {...field} />
                   </FormControl>
                   <FormDescription className="text-xs text-[#5f6368]">
-                    This will be used in your booking URL: calendra.com/username/slug
+                    Your public Heycal booking URL will use: cal.heyclift.xyz/username/slug
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -175,26 +181,49 @@ export default function NewEventPage() {
                 )}
               />
             )}
-            <FormField
-              control={form.control}
-              name="questions"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-[#1f1f1f]">Questions for invitees</FormLabel>
-                  <FormControl>
-                    <textarea
-                      className="flex min-h-24 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
-                      placeholder={"What would you like to discuss?\nAnything I should prepare?"}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormDescription className="text-xs text-[#5f6368]">
-                    Add one question per line. Invitees answer these after choosing a time.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <div className="space-y-3">
+              <div>
+                <FormLabel className="text-[#1f1f1f]">Questions for invitees</FormLabel>
+                <FormDescription className="mt-1 text-xs text-[#5f6368]">
+                  Invitees answer these after choosing a time. Add up to 10 questions.
+                </FormDescription>
+              </div>
+              {questionFields.fields.map((question, index) => (
+                <div className="flex items-start gap-2" key={question.id}>
+                  <FormField
+                    control={form.control}
+                    name={`questions.${index}.text`}
+                    render={({ field }) => (
+                      <FormItem className="flex-1">
+                        <FormControl>
+                          <Input maxLength={300} placeholder={`Question ${index + 1}`} {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="shrink-0"
+                    aria-label={`Remove question ${index + 1}`}
+                    onClick={() => questionFields.remove(index)}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+              ))}
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                disabled={questionFields.fields.length >= 10}
+                onClick={() => questionFields.append({ text: "" })}
+              >
+                <Plus className="mr-2 h-4 w-4" /> Add question
+              </Button>
+            </div>
             <div className="flex gap-3 pt-4 border-t border-gray-100">
               <Button type="button" variant="outline" className="rounded-full" onClick={() => router.back()}>
                 Cancel

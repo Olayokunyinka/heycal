@@ -110,7 +110,7 @@ export default async function DashboardPage({
     <div className="p-4 md:p-8 reveal-fade">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <h1 className="text-2xl font-normal text-[#1f1f1f]">
-          Welcome to Calendra
+          Welcome to Heycal
         </h1>
       </div>
 

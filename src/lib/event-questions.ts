@@ -11,9 +11,17 @@ export function parseEventQuestions(value: string | null | undefined): string[] 
   }
 }
 
-export function serializeEventQuestions(value: string | undefined): string {
-  const questions = (value ?? "")
-    .split(/\r?\n/)
+export function serializeEventQuestions(value: string[] | undefined): string {
+  if (value && (
+    !Array.isArray(value)
+    || value.length > 10
+    || value.some((question) => typeof question !== "string" || question.length > 300)
+  )) {
+    throw new Error("Add up to 10 questions, each 300 characters or fewer");
+  }
+
+  const questions = (value ?? [])
+    .filter((question) => typeof question === "string")
     .map((question) => question.trim())
     .filter(Boolean);
 

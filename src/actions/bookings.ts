@@ -85,7 +85,7 @@ export async function createBookingAction(data: {
         requestBody: {
           summary: `${eventType.name}: ${data.guestName}`,
           description: [
-            "Meeting scheduled via Calendra.",
+            "Meeting scheduled via Heycal.",
             `Guest: ${data.guestName} (${data.guestEmail})`,
             `Notes: ${data.guestNotes || "None"}`,
             ...questions.map((question, index) => `${question}\n${guestAnswers[index]}`),

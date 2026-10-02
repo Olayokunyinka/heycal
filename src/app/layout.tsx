@@ -15,12 +15,12 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Calendra | Simple Meeting Scheduling",
+  title: "Heycal | Simple Meeting Scheduling",
   description: "Eliminate back-and-forth emails. Connect your calendar and let people book time with you instantly. A professional scheduling tool built for speed.",
   keywords: ["scheduling", "calendar", "meetings", "google calendar", "productivity"],
-  authors: [{ name: "Calendra Team" }],
+  authors: [{ name: "Heycal Team" }],
   openGraph: {
-    title: "Calendra",
+    title: "Heycal",
     description: "Simplifying meeting scheduling.",
     type: "website",
   },
