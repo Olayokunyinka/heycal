@@ -133,6 +133,27 @@ window.location.assign(bookingUrl.toString());
 
 Replace the example path with the event's public URL. The booking page validates the email and pre-fills both fields; visitors can review or change them. These values travel in the URL, so only pass the name and email needed to complete booking.
 
+## API and Webhooks
+
+Each account can manage one API key and one booking webhook at **Dashboard → Integrations**. The API key is shown once; rotating it immediately invalidates the previous key. Keep it on your website server and never expose it in browser code.
+
+From the website's successful contact-form handler, request a booking URL from your backend:
+
+```bash
+curl -X POST https://cal.heyclift.xyz/api/v1/booking-links \
+	-H "Authorization: Bearer $HEYCAL_API_KEY" \
+	-H "Content-Type: application/json" \
+	-d '{"eventSlug":"20-min","name":"Avery Example","email":"avery@example.com"}'
+```
+
+The API key is scoped to its owner's active events. The response contains a prefilled `url`; redirect the visitor to it. The URL carries an opaque, one-use token that expires after 30 minutes, not the contact details. API calls are server-to-server and do not support browser CORS.
+
+To enable signed booking webhooks, configure a random `WEBHOOK_SIGNING_SECRET` as a Cloudflare Worker secret (for example, generate one with `openssl rand -hex 32`). Do not put it in `wrangler.jsonc` or expose it to the browser. The Integrations page then shows a per-account `whsec_...` secret for the receiver. Heycal sends `booking.created` with `X-Heycal-Timestamp` and `X-Heycal-Signature: v1=<hex>`. Verify the signature as HMAC-SHA256 over `<timestamp>.<raw request body>` using that per-account secret, and reject stale timestamps. Delivery is currently best-effort with a five-second timeout and no automatic retry; return a 2xx response promptly and queue work on the receiving server if needed.
+
+## Booking Confirmation Emails
+
+Heycal can send a separate confirmation to the guest and a new-booking notification to the organizer through Resend. Configure `RESEND_API_KEY` as a Cloudflare Worker secret and `RESEND_FROM_EMAIL` as a verified sender address. Without both values, bookings still work and Google Calendar invitations continue when the organizer has connected Google Calendar, but Heycal does not send its separate confirmation emails.
+
 ## Deployment
 
 ### Platform Admin Access

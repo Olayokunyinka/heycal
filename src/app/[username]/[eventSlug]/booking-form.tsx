@@ -27,12 +27,14 @@ export function BookingForm({
   hostId,
   initialName,
   initialEmail,
+  handoffToken,
   returnUrl,
 }: {
   eventType: EventType;
   hostId: string;
   initialName: string;
   initialEmail: string;
+  handoffToken: string | null;
   returnUrl: string | null;
 }) {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
@@ -47,6 +49,7 @@ export function BookingForm({
   const [guestAnswers, setGuestAnswers] = useState<string[]>([]);
   const [meetingUrl, setMeetingUrl] = useState<string | null>(null);
   const [invitationSent, setInvitationSent] = useState(false);
+  const [guestConfirmationSent, setGuestConfirmationSent] = useState(false);
 
   const fetchSlots = useCallback(async (date: Date) => {
     setIsLoading(true);
@@ -80,9 +83,11 @@ export function BookingForm({
         guestNotes,
         guestAnswers,
         startTime: selectedSlot,
+        bookingIntentToken: handoffToken,
       });
       setMeetingUrl(result.meetingUrl);
       setInvitationSent(result.invitationSent);
+      setGuestConfirmationSent(result.guestConfirmationSent);
       setStep(3);
       toast.success("Meeting booked successfully!");
     } catch (err) {
@@ -104,8 +109,12 @@ export function BookingForm({
         <h2 className="text-2xl font-normal text-[#1f1f1f] mb-4">You&apos;re all set!</h2>
         <p className="text-[#5f6368] mb-6 max-w-sm">
           Your {eventType.name} has been scheduled.
-          {invitationSent
-            ? ` An invitation was sent to ${guestEmail}.`
+          {invitationSent && guestConfirmationSent
+            ? ` A calendar invitation and confirmation email were sent to ${guestEmail}.`
+            : invitationSent
+              ? ` A calendar invitation was sent to ${guestEmail}.`
+              : guestConfirmationSent
+                ? ` A confirmation email was sent to ${guestEmail}.`
             : " The host will follow up with the event details."}
         </p>
         <div className="mb-8 flex flex-wrap justify-center gap-3">
@@ -121,14 +130,14 @@ export function BookingForm({
               <a href={returnUrl}>Return to website</a>
             </Button>
           )}
-          {invitationSent && getInboxUrl(guestEmail) && (
+          {(invitationSent || guestConfirmationSent) && getInboxUrl(guestEmail) && (
             <Button asChild variant="outline" className="rounded-full">
               <a href={getInboxUrl(guestEmail)!} target="_blank" rel="noreferrer">
                 Check your email
               </a>
             </Button>
           )}
-          {invitationSent && !getInboxUrl(guestEmail) && (
+          {(invitationSent || guestConfirmationSent) && !getInboxUrl(guestEmail) && (
             <Button asChild variant="outline" className="rounded-full">
               <a href={`mailto:${encodeURIComponent(guestEmail)}`}>Open email app</a>
             </Button>

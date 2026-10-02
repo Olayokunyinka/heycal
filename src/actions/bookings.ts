@@ -1,12 +1,14 @@
 "use server";
 
 import { db } from "@/db";
-import { bookings } from "@/db/schema";
+import { bookingIntents, bookings } from "@/db/schema";
 import { nanoid } from "nanoid";
 import { getGoogleCalendarClient } from "@/lib/google-calendar";
 import { addMinutes } from "date-fns";
-import { eq } from "drizzle-orm";
+import { and, eq, gt, isNull } from "drizzle-orm";
 import { parseEventQuestions } from "@/lib/event-questions";
+import { hashApiKey, sendBookingCreatedWebhook } from "@/lib/integrations";
+import { sendBookingConfirmationEmails } from "@/lib/booking-email";
 
 export async function createBookingAction(data: {
   eventTypeId: string;
@@ -16,6 +18,7 @@ export async function createBookingAction(data: {
   guestNotes?: string;
   guestAnswers: string[];
   startTime: string;
+  bookingIntentToken?: string | null;
 }) {
   const startTime = new Date(data.startTime);
   
@@ -42,22 +45,56 @@ export async function createBookingAction(data: {
   const endTime = addMinutes(startTime, eventType.duration);
   const bookingId = nanoid();
   const guestAnswers = answers.map((answer) => answer.trim());
+  const handoffTokenHash = data.bookingIntentToken
+    ? await hashApiKey(data.bookingIntentToken)
+    : null;
+
+  if (handoffTokenHash) {
+    const now = new Date();
+    const claim = await db.update(bookingIntents)
+      .set({ usedAt: now })
+      .where(and(
+        eq(bookingIntents.tokenHash, handoffTokenHash),
+        eq(bookingIntents.userId, data.hostId),
+        eq(bookingIntents.eventTypeId, data.eventTypeId),
+        isNull(bookingIntents.usedAt),
+        gt(bookingIntents.expiresAt, now),
+      ));
+    if (claim.rowsAffected !== 1) {
+      throw new Error("This website booking link has expired or has already been used. Please submit the contact form again.");
+    }
+  }
+
+  const releaseHandoffToken = async () => {
+    if (!handoffTokenHash) return;
+    await db.update(bookingIntents)
+      .set({ usedAt: null })
+      .where(and(
+        eq(bookingIntents.tokenHash, handoffTokenHash),
+        eq(bookingIntents.userId, data.hostId),
+      ));
+  };
 
   // Save the booking first so non-video events can still be scheduled without Calendar access.
-  await db.insert(bookings).values({
-    id: bookingId,
-    eventTypeId: data.eventTypeId,
-    userId: data.hostId,
-    guestName: data.guestName,
-    guestEmail: data.guestEmail,
-    guestNotes: data.guestNotes,
-    guestAnswers: JSON.stringify(questions.map((question, index) => ({
-      question,
-      answer: guestAnswers[index],
-    }))),
-    startTime: startTime,
-    endTime: endTime,
-  });
+  try {
+    await db.insert(bookings).values({
+      id: bookingId,
+      eventTypeId: data.eventTypeId,
+      userId: data.hostId,
+      guestName: data.guestName,
+      guestEmail: data.guestEmail,
+      guestNotes: data.guestNotes,
+      guestAnswers: JSON.stringify(questions.map((question, index) => ({
+        question,
+        answer: guestAnswers[index],
+      }))),
+      startTime: startTime,
+      endTime: endTime,
+    });
+  } catch (error) {
+    await releaseHandoffToken();
+    throw error;
+  }
 
   let calendar = null;
   try {
@@ -65,6 +102,7 @@ export async function createBookingAction(data: {
   } catch (error) {
     if (eventType.locationType === "google_meet") {
       await db.delete(bookings).where(eq(bookings.id, bookingId));
+      await releaseHandoffToken();
       throw new Error("The host must reconnect Google Calendar with Calendar events access to create a Meet link");
     }
     console.error("Failed to connect to Google Calendar", error);
@@ -72,6 +110,7 @@ export async function createBookingAction(data: {
 
   if (eventType.locationType === "google_meet" && !calendar) {
     await db.delete(bookings).where(eq(bookings.id, bookingId));
+    await releaseHandoffToken();
     throw new Error("The host must connect Google Calendar before this event can be booked");
   }
 
@@ -136,10 +175,60 @@ export async function createBookingAction(data: {
       console.error("Failed to add to Google Calendar", error);
       if (eventType.locationType === "google_meet") {
         await db.delete(bookings).where(eq(bookings.id, bookingId));
+        await releaseHandoffToken();
         throw new Error("Google Calendar could not create a Meet link. Reconnect Google Calendar and try again");
       }
     }
   }
 
-  return { success: true, meetingUrl, invitationSent };
+  try {
+    await sendBookingCreatedWebhook({
+      userId: data.hostId,
+      booking: {
+        id: bookingId,
+        guestName: data.guestName,
+        guestEmail: data.guestEmail,
+        guestNotes: data.guestNotes,
+        guestAnswers: questions.map((question, index) => ({ question, answer: guestAnswers[index] })),
+        startTime,
+        endTime,
+        meetingUrl,
+      },
+      event: {
+        id: eventType.id,
+        name: eventType.name,
+        slug: eventType.slug,
+        duration: eventType.duration,
+      },
+    });
+  } catch (error) {
+    console.error("Booking webhook dispatch failed", error);
+  }
+
+  let guestConfirmationSent = false;
+  try {
+    const organizer = await db.query.users.findFirst({
+      where: (user, { eq }) => eq(user.id, data.hostId),
+    });
+    if (organizer) {
+      const emailResult = await sendBookingConfirmationEmails({
+        eventName: eventType.name,
+        eventDuration: eventType.duration,
+        guestName: data.guestName,
+        guestEmail: data.guestEmail,
+        organizerEmail: organizer.email,
+        startTime,
+        endTime,
+        meetingUrl,
+        locationDetails: eventType.locationDetails,
+        guestNotes: data.guestNotes,
+        guestAnswers: questions.map((question, index) => ({ question, answer: guestAnswers[index] })),
+      });
+      guestConfirmationSent = emailResult.guestConfirmationSent;
+    }
+  } catch (error) {
+    console.error("Booking confirmation email dispatch failed", error instanceof Error ? error.message : "unknown error");
+  }
+
+  return { success: true, meetingUrl, invitationSent, guestConfirmationSent };
 }

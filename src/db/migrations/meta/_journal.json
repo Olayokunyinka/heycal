@@ -36,6 +36,20 @@
       "when": 1790920342483,
       "tag": "0004_allow_clerk_identity_email_reuse",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1790926609534,
+      "tag": "0005_user_integrations",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1790927286618,
+      "tag": "0006_booking_handoff_intents",
+      "breakpoints": true
     }
   ]
 }

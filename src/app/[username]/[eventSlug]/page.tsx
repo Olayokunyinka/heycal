@@ -1,9 +1,12 @@
 import { db } from "@/db";
+import { bookingIntents } from "@/db/schema";
+import { and, eq, gt, isNull } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { BookingForm } from "./booking-form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, MapPin, Video } from "lucide-react";
 import { parseEventQuestions } from "@/lib/event-questions";
+import { hashApiKey } from "@/lib/integrations";
 
 export const dynamic = "force-dynamic";
 
@@ -12,13 +15,13 @@ export default async function PublicBookingPage({
   searchParams,
 }: {
   params: Promise<{ username: string; eventSlug: string }>;
-  searchParams: Promise<{ name?: string | string[]; email?: string | string[] }>;
+  searchParams: Promise<{ name?: string | string[]; email?: string | string[]; handoff?: string | string[] }>;
 }) {
   const { username, eventSlug } = await params;
   const query = await searchParams;
-  const initialName = typeof query.name === "string" ? query.name.trim().slice(0, 120) : "";
-  const candidateEmail = typeof query.email === "string" ? query.email.trim().slice(0, 254) : "";
-  const initialEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(candidateEmail) ? candidateEmail : "";
+  const handoffToken = typeof query.handoff === "string" && query.handoff.length <= 128 ? query.handoff : null;
+  const directName = typeof query.name === "string" ? query.name.trim().slice(0, 120) : "";
+  const directEmail = typeof query.email === "string" ? query.email.trim().slice(0, 254) : "";
 
   const user = await db.query.users.findFirst({
     where: (u, { eq }) => eq(u.username, username),
@@ -35,6 +38,21 @@ export default async function PublicBookingPage({
   if (!eventType) {
     return notFound();
   }
+
+  const handoffIntent = handoffToken
+    ? await db.query.bookingIntents.findFirst({
+        where: and(
+          eq(bookingIntents.tokenHash, await hashApiKey(handoffToken)),
+          eq(bookingIntents.userId, user.id),
+          eq(bookingIntents.eventTypeId, eventType.id),
+          isNull(bookingIntents.usedAt),
+          gt(bookingIntents.expiresAt, new Date()),
+        ),
+      })
+    : null;
+  const initialName = handoffIntent?.guestName ?? directName;
+  const candidateEmail = handoffIntent?.guestEmail ?? directEmail;
+  const initialEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(candidateEmail) ? candidateEmail : "";
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] flex items-center justify-center p-4">
@@ -87,6 +105,7 @@ export default async function PublicBookingPage({
             hostId={user.id}
             initialName={initialName}
             initialEmail={initialEmail}
+            handoffToken={handoffIntent ? handoffToken : null}
             returnUrl={eventType.websiteReturnUrl}
           />
         </div>

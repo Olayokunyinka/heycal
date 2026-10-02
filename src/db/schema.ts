@@ -11,6 +11,16 @@ export const users = sqliteTable("users", {
   updatedAt: integer("updated_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
 });
 
+export const integrations = sqliteTable("integrations", {
+  userId: text("user_id").primaryKey().references(() => users.id, { onDelete: "cascade" }),
+  apiKeyHash: text("api_key_hash").unique(),
+  apiKeyPrefix: text("api_key_prefix"),
+  webhookUrl: text("webhook_url"),
+  apiKeyLastUsedAt: integer("api_key_last_used_at", { mode: "timestamp" }),
+  createdAt: integer("created_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
+});
+
 export const eventTypes = sqliteTable("event_types", {
   id: text("id").primaryKey(), // UUID or nanoid
   userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
@@ -27,6 +37,17 @@ export const eventTypes = sqliteTable("event_types", {
   slug: text("slug").notNull(),
   createdAt: integer("created_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
   updatedAt: integer("updated_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
+});
+
+export const bookingIntents = sqliteTable("booking_intents", {
+  tokenHash: text("token_hash").primaryKey(),
+  userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  eventTypeId: text("event_type_id").notNull().references(() => eventTypes.id, { onDelete: "cascade" }),
+  guestName: text("guest_name").notNull(),
+  guestEmail: text("guest_email").notNull(),
+  expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
+  usedAt: integer("used_at", { mode: "timestamp" }),
+  createdAt: integer("created_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
 });
 
 export const availability = sqliteTable("availability", {

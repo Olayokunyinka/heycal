@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Calendar, Clock, Cloud, Home, ShieldCheck, Star, Trash2 } from "lucide-react";
+import { Calendar, Clock, Cloud, Home, Plug, ShieldCheck, Star, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { toast } from "sonner";
@@ -11,6 +11,7 @@ const navItems = [
   { icon: Home, label: "Home", href: "/dashboard" },
   { icon: Clock, label: "Availability", href: "/dashboard/availability" },
   { icon: Calendar, label: "My Bookings", href: "/dashboard/bookings" },
+  { icon: Plug, label: "Integrations", href: "/dashboard/integrations" },
   { icon: Star, label: "Starred", href: "/dashboard/starred" },
   { icon: Trash2, label: "Trash", href: "/dashboard/trash" },
 ];
