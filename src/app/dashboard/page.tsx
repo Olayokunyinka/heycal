@@ -61,7 +61,15 @@ export default async function DashboardPage({
         where: (u, { eq }) => eq(u.id, userId),
       });
     } catch (err) {
-      console.error("User sync insert failed:", err);
+      const dbError = err && typeof err === "object"
+        ? err as { name?: string; message?: string; code?: string; extendedCode?: number }
+        : undefined;
+      console.error("User sync insert failed:", JSON.stringify({
+        name: dbError?.name ?? "UnknownError",
+        code: dbError?.code,
+        extendedCode: dbError?.extendedCode,
+        message: dbError?.message ?? String(err),
+      }));
       // Try one more time to fetch (maybe it was already inserted by a parallel request)
       existingUser = await db.query.users.findFirst({
         where: (u, { eq }) => eq(u.id, userId),
