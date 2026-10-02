@@ -51,7 +51,7 @@ export function BookingForm({
   const fetchSlots = useCallback(async (date: Date) => {
     setIsLoading(true);
     try {
-      const slots = await getAvailableSlotsAction(hostId, date.toISOString(), eventType.duration);
+      const slots = await getAvailableSlotsAction(hostId, format(date, "yyyy-MM-dd"), eventType.duration);
       setAvailableSlots(slots);
     } catch (error) {
       console.error("Fetch slots error:", error);

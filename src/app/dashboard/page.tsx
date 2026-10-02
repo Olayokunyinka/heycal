@@ -4,6 +4,7 @@ import { users } from "@/db/schema";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { Users, Video, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
+import { eq } from "drizzle-orm";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { BookingsList } from "./bookings-list";
@@ -44,8 +45,9 @@ export default async function DashboardPage({
         throw new Error("User email not found in Clerk profile.");
     }
 
-    defaultUsername = email.split("@")[0] + "_" + Date.now();
     const fullName = [user.firstName, user.lastName].filter(Boolean).join(" ") || "Guest User";
+    const usernameBase = toUsernameSlug(user.username || fullName || email.split("@")[0]);
+    defaultUsername = await findAvailableUsername(usernameBase);
 
     try {
       await db.insert(users).values({
@@ -78,6 +80,18 @@ export default async function DashboardPage({
       if (!existingUser) {
           throw new Error("Failed to synchronize user data with the database.");
       }
+    }
+  } else if (existingUser?.username && /_\d{13}$/.test(existingUser.username)) {
+    const email = user.emailAddresses[0]?.emailAddress;
+    const fullName = [user.firstName, user.lastName].filter(Boolean).join(" ");
+    const usernameBase = toUsernameSlug(user.username || fullName || email?.split("@")[0] || "heycal-user");
+    const readableUsername = await findAvailableUsername(usernameBase, userId);
+
+    if (readableUsername !== existingUser.username) {
+      await db.update(users)
+        .set({ username: readableUsername })
+        .where(eq(users.id, userId));
+      existingUser = { ...existingUser, username: readableUsername };
     }
   }
 
@@ -217,4 +231,31 @@ export default async function DashboardPage({
 
 function getEventName(id: string, types: { id: string; name: string }[]) {
     return types.find(t => t.id === id)?.name || "Meeting";
+}
+
+function toUsernameSlug(value: string): string {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 48)
+    .replace(/-+$/g, "") || "heycal-user";
+}
+
+async function findAvailableUsername(base: string, currentUserId?: string): Promise<string> {
+  let candidate = base;
+  let suffix = 2;
+
+  while (true) {
+    const conflict = await db.query.users.findFirst({
+      where: (u, { eq }) => eq(u.username, candidate),
+    });
+
+    if (!conflict || conflict.id === currentUserId) return candidate;
+
+    const suffixText = `-${suffix++}`;
+    candidate = `${base.slice(0, 48 - suffixText.length).replace(/-+$/g, "")}${suffixText}`;
+  }
 }

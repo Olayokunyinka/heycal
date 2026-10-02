@@ -66,11 +66,15 @@ export default async function PublicBookingPage({
                     custom: "Custom location",
                   }[eventType.locationType]}
                 </p>
-                {eventType.locationDetails && <p>{eventType.locationDetails}</p>}
+                {eventType.locationType === "google_meet" ? (
+                  <p>Web conferencing details provided upon confirmation.</p>
+                ) : (
+                  eventType.locationDetails && <p>{eventType.locationDetails}</p>
+                )}
               </div>
             </div>
           )}
-          <p className="text-sm text-[#5f6368] leading-relaxed">
+          <p className="whitespace-pre-wrap break-words text-sm text-[#5f6368] leading-relaxed">
             {eventType.description || "Welcome to my scheduling page. Please select a time that works for you."}
           </p>
         </div>

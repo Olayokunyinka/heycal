@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -25,6 +26,9 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { createEventType } from "@/actions/event-types";
 import { Plus, X } from "lucide-react";
+import { ConnectGoogleButton } from "@/components/connect-google-button";
+
+const draftStorageKey = "heycal:new-event-type-draft";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -59,12 +63,28 @@ export default function NewEventPage() {
   const locationType = useWatch({ control: form.control, name: "locationType" });
   const questionFields = useFieldArray({ control: form.control, name: "questions" });
 
+  useEffect(() => {
+    const savedDraft = sessionStorage.getItem(draftStorageKey);
+    if (!savedDraft) return;
+
+    try {
+      const draft = formSchema.safeParse(JSON.parse(savedDraft));
+      if (draft.success) form.reset(draft.data);
+    } catch {
+      sessionStorage.removeItem(draftStorageKey);
+      return;
+    }
+
+    sessionStorage.removeItem(draftStorageKey);
+  }, [form]);
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       await createEventType({
         ...values,
         questions: values.questions.map(({ text }) => text),
       });
+      sessionStorage.removeItem(draftStorageKey);
       toast.success("Event type created!");
       router.push("/dashboard");
       router.refresh();
@@ -173,6 +193,11 @@ export default function NewEventPage() {
                   <FormDescription className="text-xs text-[#5f6368]">
                     Google Meet links are created when you connect Google Calendar.
                   </FormDescription>
+                  {locationType === "google_meet" && (
+                    <ConnectGoogleButton
+                      beforeRedirect={() => sessionStorage.setItem(draftStorageKey, JSON.stringify(form.getValues()))}
+                    />
+                  )}
                   <FormMessage />
                 </FormItem>
               )}
@@ -254,7 +279,10 @@ export default function NewEventPage() {
               </Button>
             </div>
             <div className="flex gap-3 pt-4 border-t border-gray-100">
-              <Button type="button" variant="outline" className="rounded-full" onClick={() => router.back()}>
+              <Button type="button" variant="outline" className="rounded-full" onClick={() => {
+                sessionStorage.removeItem(draftStorageKey);
+                router.back();
+              }}>
                 Cancel
               </Button>
               <Button type="submit" className="rounded-full bg-[#6426d9] hover:bg-[#4b1cac]">

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -26,6 +27,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { updateEventType, deleteEventType } from "@/actions/event-types";
 import { Plus, Trash2, X } from "lucide-react";
+import { ConnectGoogleButton } from "@/components/connect-google-button";
 import { parseEventQuestions } from "@/lib/event-questions";
 import {
   Dialog,
@@ -68,6 +70,7 @@ interface EventType {
 
 export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
   const router = useRouter();
+  const draftStorageKey = `heycal:edit-event-type-draft:${eventType.id}`;
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -85,12 +88,28 @@ export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
   const locationType = useWatch({ control: form.control, name: "locationType" });
   const questionFields = useFieldArray({ control: form.control, name: "questions" });
 
+  useEffect(() => {
+    const savedDraft = sessionStorage.getItem(draftStorageKey);
+    if (!savedDraft) return;
+
+    try {
+      const draft = formSchema.safeParse(JSON.parse(savedDraft));
+      if (draft.success) form.reset(draft.data);
+    } catch {
+      sessionStorage.removeItem(draftStorageKey);
+      return;
+    }
+
+    sessionStorage.removeItem(draftStorageKey);
+  }, [draftStorageKey, form]);
+
   async function onSubmit(values: FormValues) {
     try {
       await updateEventType(eventType.id, {
         ...values,
         questions: values.questions.map(({ text }) => text),
       });
+      sessionStorage.removeItem(draftStorageKey);
       toast.success("Event type updated!");
       router.push("/dashboard");
       router.refresh();
@@ -103,6 +122,7 @@ export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
   async function onDelete() {
     try {
       await deleteEventType(eventType.id);
+      sessionStorage.removeItem(draftStorageKey);
       toast.success("Event type deleted");
       router.push("/dashboard");
       router.refresh();
@@ -225,6 +245,11 @@ export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
                 <FormDescription className="text-xs text-[#5f6368]">
                   Google Meet links are created when you connect Google Calendar.
                 </FormDescription>
+                {locationType === "google_meet" && (
+                  <ConnectGoogleButton
+                    beforeRedirect={() => sessionStorage.setItem(draftStorageKey, JSON.stringify(form.getValues()))}
+                  />
+                )}
                 <FormMessage />
               </FormItem>
             )}
@@ -308,7 +333,10 @@ export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
           
           <div className="flex flex-col md:flex-row justify-between gap-4 pt-6 border-t border-gray-100">
             <div className="flex gap-3">
-              <Button type="button" variant="outline" className="rounded-full" onClick={() => router.back()}>
+              <Button type="button" variant="outline" className="rounded-full" onClick={() => {
+                sessionStorage.removeItem(draftStorageKey);
+                router.back();
+              }}>
                 Cancel
               </Button>
               <Button type="submit" className="rounded-full bg-[#6426d9] hover:bg-[#4b1cac]">
