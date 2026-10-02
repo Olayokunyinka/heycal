@@ -1,10 +1,11 @@
 "use client";
 
 import { UserButton } from "@clerk/nextjs";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Calendar as CalendarIcon, Search, HelpCircle, Settings, Grid, SlidersHorizontal, CheckCircle2, X } from "lucide-react";
+import { Search, HelpCircle, Settings, Grid, SlidersHorizontal, CheckCircle2, X } from "lucide-react";
 import { toast } from "sonner";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Switch } from "@/components/ui/switch";
@@ -43,9 +44,7 @@ export function Navbar() {
         {/* Left side: Logo and App Name */}
         <div className="flex items-center gap-2 min-w-[232px]">
           <Link href="/dashboard" className="flex items-center gap-3 group p-2 hover:bg-[#1f1f1f0a] rounded-lg transition-all duration-200">
-            <div className="bg-[#0b57d0] p-1.5 rounded-lg text-white">
-              <CalendarIcon size={24} />
-            </div>
+            <Image src="/heycal-mark.png" alt="" width={36} height={36} className="size-9 object-contain" />
             <span className="text-[22px] font-normal text-[#444746] tracking-tight">
               Heycal
             </span>
@@ -64,7 +63,7 @@ export function Navbar() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search events and bookings"
-              className="block w-full pl-12 pr-12 py-3 bg-[#eaf1fb] border-transparent rounded-full focus:bg-white focus:shadow-[0_1px_1px_0_rgba(65,69,73,0.3),0_1px_3px_1px_rgba(65,69,73,0.15)] transition-all duration-200 text-base outline-none"
+              className="block w-full pl-12 pr-12 py-3 bg-[#f3edff] border-transparent rounded-full focus:bg-white focus:shadow-[0_1px_1px_0_rgba(65,69,73,0.3),0_1px_3px_1px_rgba(65,69,73,0.15)] transition-all duration-200 text-base outline-none"
             />
             <div className="absolute inset-y-0 right-0 pr-4 flex items-center gap-1">
               {searchQuery && (

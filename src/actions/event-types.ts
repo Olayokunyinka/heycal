@@ -18,6 +18,25 @@ function validateLocationType(locationType: string): asserts locationType is Eve
   }
 }
 
+function normalizeWebsiteReturnUrl(value?: string): string | null {
+  const candidate = value?.trim();
+  if (!candidate) return null;
+
+  let url: URL;
+  try {
+    url = new URL(candidate);
+  } catch {
+    throw new Error("Enter a valid website return URL");
+  }
+
+  const isLocalDevelopmentUrl = url.protocol === "http:" && ["localhost", "127.0.0.1"].includes(url.hostname);
+  if ((url.protocol !== "https:" && !isLocalDevelopmentUrl) || url.username || url.password) {
+    throw new Error("Return URLs must use HTTPS");
+  }
+
+  return url.toString();
+}
+
 export async function createEventType(values: {
   name: string;
   description?: string;
@@ -26,6 +45,7 @@ export async function createEventType(values: {
   locationType: EventLocationType;
   locationDetails?: string;
   questions: string[];
+  websiteReturnUrl?: string;
 }) {
   const { userId } = await auth();
 
@@ -44,6 +64,7 @@ export async function createEventType(values: {
     slug: values.slug,
     locationType: values.locationType,
     locationDetails: values.locationDetails?.trim() || null,
+    websiteReturnUrl: normalizeWebsiteReturnUrl(values.websiteReturnUrl),
     customQuestions: serializeEventQuestions(values.questions),
   });
 
@@ -59,6 +80,7 @@ export async function updateEventType(id: string, values: {
   locationType: EventLocationType;
   locationDetails?: string;
   questions: string[];
+  websiteReturnUrl?: string;
 }) {
   const { userId } = await auth();
 
@@ -77,6 +99,7 @@ export async function updateEventType(id: string, values: {
       isActive: values.isActive,
       locationType: values.locationType,
       locationDetails: values.locationDetails?.trim() || null,
+      websiteReturnUrl: normalizeWebsiteReturnUrl(values.websiteReturnUrl),
       customQuestions: serializeEventQuestions(values.questions),
     })
     .where(and(eq(eventTypes.id, id), eq(eventTypes.userId, userId)));

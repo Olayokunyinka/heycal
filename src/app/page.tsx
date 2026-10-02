@@ -1,23 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Calendar as CalendarIcon, Clock, ShieldCheck, Zap, ArrowRight, UserPlus, CheckCircle2 } from "lucide-react";
+import { Clock, ShieldCheck, Zap, ArrowRight, UserPlus, CheckCircle2 } from "lucide-react";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-white selection:bg-[#e8f0fe] selection:text-[#1a73e8]">
+    <div className="flex flex-col min-h-screen bg-white selection:bg-[#efe7ff] selection:text-[#6426d9]">
       {/* Navigation */}
       <header className="px-6 h-16 flex items-center sticky top-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <Link className="flex items-center gap-2 group" href="/">
-          <div className="bg-[#1a73e8] p-1.5 rounded-lg text-white transition-transform group-hover:scale-105">
-            <CalendarIcon size={20} />
-          </div>
+          <Image src="/heycal-mark.png" alt="" width={36} height={36} className="size-9 object-contain transition-transform group-hover:scale-105" />
           <span className="text-[22px] font-normal text-[#5f6368] tracking-tight">Heycal</span>
         </Link>
         <nav className="ml-auto flex items-center gap-4 sm:gap-8">
-          <Link className="text-sm font-medium text-[#5f6368] hover:text-[#1a73e8] transition-colors" href="/sign-in">
+          <Link className="text-sm font-medium text-[#5f6368] hover:text-[#6426d9] transition-colors" href="/sign-in">
             Sign In
           </Link>
-          <Button asChild variant="outline" className="rounded-full px-6 border-gray-200 text-[#1a73e8] hover:bg-[#f8f9fa]">
+          <Button asChild variant="outline" className="rounded-full px-6 border-gray-200 text-[#6426d9] hover:bg-[#f8f9fa]">
             <Link href="/sign-up">Get Started</Link>
           </Button>
         </nav>
@@ -28,7 +27,7 @@ export default function LandingPage() {
         <section className="relative w-full pt-24 pb-20 md:pt-32 md:pb-32 overflow-hidden">
           {/* Abstract Background Elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-[0.03]">
-            <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#1a73e8] blur-3xl animate-pulse" />
+            <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#6426d9] blur-3xl animate-pulse" />
             <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-[#34a853] blur-3xl" />
           </div>
 
@@ -36,7 +35,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center space-y-8 text-center">
               <div className="space-y-6 max-w-4xl">
                 <h1 className="text-5xl md:text-8xl font-normal tracking-tight text-[#1f1f1f] leading-[1.1]">
-                  Scheduling <span className="text-[#1a73e8]">made simple</span>
+                  Scheduling <span className="text-[#6426d9]">made simple</span>
                 </h1>
                 <p className="mx-auto max-w-[640px] text-[#5f6368] text-xl md:text-2xl font-light leading-relaxed">
                   Heycal helps you schedule meetings without the back-and-forth emails.
@@ -44,7 +43,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4 reveal-up" style={{ animationDelay: '0.2s' }}>
-                <Button asChild size="lg" className="rounded-full bg-[#1a73e8] hover:bg-[#1557b0] px-10 h-14 text-lg shadow-lg hover:shadow-xl transition-all">
+                <Button asChild size="lg" className="rounded-full bg-[#6426d9] hover:bg-[#4b1cac] px-10 h-14 text-lg shadow-lg hover:shadow-xl transition-all">
                   <Link href="/dashboard">Try Heycal for free</Link>
                 </Button>
                 <Button variant="ghost" size="lg" className="rounded-full px-10 h-14 text-lg text-[#5f6368] hover:bg-gray-50 group">
@@ -58,7 +57,7 @@ export default function LandingPage() {
         {/* Product Preview Section */}
         <section className="w-full pb-20 md:pb-32 reveal-up" style={{ animationDelay: '0.4s' }}>
           <div className="container px-4 mx-auto max-w-6xl">
-            <div className="relative p-2 md:p-4 rounded-[32px] bg-gradient-to-br from-[#f8f9fa] to-[#e8f0fe] border border-gray-100 shadow-2xl">
+            <div className="relative p-2 md:p-4 rounded-[32px] bg-gradient-to-br from-[#f8f9fa] to-[#efe7ff] border border-gray-100 shadow-2xl">
               <div className="rounded-[24px] overflow-hidden bg-white border border-gray-200 shadow-inner min-h-[300px] md:min-h-[500px] relative flex flex-col">
                 {/* Fake Header */}
                 <div className="h-14 border-b border-gray-100 bg-[#f8f9fa] flex items-center px-4 gap-4">
@@ -73,7 +72,7 @@ export default function LandingPage() {
                 <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
                   <div className="space-y-6">
                     <div className="h-4 w-32 bg-gray-100 rounded" />
-                    <div className="h-32 w-full bg-[#e8f1fe] rounded-2xl border border-[#d2e3fc]" />
+                    <div className="h-32 w-full bg-[#f1eaff] rounded-2xl border border-[#decfff]" />
                     <div className="h-32 w-full bg-gray-50 rounded-2xl border border-gray-100" />
                   </div>
                   <div className="space-y-6">
@@ -88,7 +87,7 @@ export default function LandingPage() {
                 {/* Visual Label */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="bg-white/90 backdrop-blur px-8 py-4 rounded-full border border-gray-200 shadow-xl flex items-center gap-3">
-                        <CheckCircle2 className="text-[#1a73e8] h-6 w-6" />
+                        <CheckCircle2 className="text-[#6426d9] h-6 w-6" />
                         <span className="text-xl font-medium text-[#1f1f1f]">Professional & Minimal</span>
                     </div>
                 </div>
@@ -126,7 +125,7 @@ export default function LandingPage() {
                 }
               ].map((feature, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-gray-200 transition-all hover:shadow-xl hover:-translate-y-1 reveal-up" style={{ animationDelay: `${0.1 * idx}s` }}>
-                  <div className="h-16 w-16 rounded-2xl bg-[#e8f0fe] flex items-center justify-center text-[#1a73e8] mb-6">
+                  <div className="h-16 w-16 rounded-2xl bg-[#efe7ff] flex items-center justify-center text-[#6426d9] mb-6">
                     <feature.icon size={32} />
                   </div>
                   <h3 className="text-xl font-medium text-[#1f1f1f] mb-3">{feature.title}</h3>
@@ -143,7 +142,7 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
               <div className="space-y-12 reveal-up">
                 <div className="space-y-4">
-                  <span className="text-[#1a73e8] font-medium tracking-widest uppercase text-sm">How it works</span>
+                  <span className="text-[#6426d9] font-medium tracking-widest uppercase text-sm">How it works</span>
                   <h2 className="text-4xl md:text-5xl font-normal text-[#1f1f1f]">Three simple steps to <br/>perfect scheduling</h2>
                 </div>
                 
@@ -154,7 +153,7 @@ export default function LandingPage() {
                     { icon: CheckCircle2, step: "03", title: "Wait for the bookings", desc: "Guests pick a time, and it's added automatically to your calendar." }
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-6 group">
-                      <div className="h-12 w-12 rounded-full border-2 border-gray-100 flex items-center justify-center text-[#1a73e8] font-bold shrink-0 transition-colors group-hover:border-[#1a73e8] group-hover:bg-[#1a73e8] group-hover:text-white">
+                      <div className="h-12 w-12 rounded-full border-2 border-gray-100 flex items-center justify-center text-[#6426d9] font-bold shrink-0 transition-colors group-hover:border-[#6426d9] group-hover:bg-[#6426d9] group-hover:text-white">
                         {step.step}
                       </div>
                       <div className="space-y-1">
@@ -166,7 +165,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="relative reveal-up" style={{ animationDelay: '0.3s' }}>
-                <div className="bg-[#e8f1fe] rounded-[40px] p-8 aspect-square flex items-center justify-center">
+                <div className="bg-[#f1eaff] rounded-[40px] p-8 aspect-square flex items-center justify-center">
                     <div className="w-full h-full rounded-[32px] bg-white border border-gray-200 shadow-xl flex flex-col p-6 overflow-hidden">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="w-12 h-12 rounded-full bg-gray-100 animate-pulse" />
@@ -197,7 +196,7 @@ export default function LandingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="w-full py-24 md:py-40 bg-[#1a73e8] reveal-fade">
+        <section className="w-full py-24 md:py-40 bg-[#6426d9] reveal-fade">
           <div className="container px-4 md:px-6 mx-auto text-center space-y-10">
             <div className="space-y-6 max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-7xl font-normal text-white leading-tight">Ready to reclaim your time?</h2>
@@ -206,7 +205,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Button asChild size="lg" className="rounded-full bg-white text-[#1a73e8] hover:bg-gray-50 px-12 h-16 text-xl shadow-2xl hover:scale-105 transition-all">
+              <Button asChild size="lg" className="rounded-full bg-white text-[#6426d9] hover:bg-gray-50 px-12 h-16 text-xl shadow-2xl hover:scale-105 transition-all">
                 <Link href="/dashboard">Get Started Now</Link>
               </Button>
             </div>
@@ -217,22 +216,20 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="flex flex-col gap-4 sm:flex-row py-12 w-full shrink-0 items-center px-10 border-t border-gray-100 bg-[#f8f9fa]">
         <div className="flex items-center gap-2 mr-auto">
-          <div className="bg-[#1a73e8] p-1 rounded text-white">
-            <CalendarIcon size={14} />
-          </div>
+          <Image src="/heycal-mark.png" alt="" width={24} height={24} className="size-6 object-contain" />
           <p className="text-sm text-[#5f6368]">© 2026 Heycal. Part of the Scheduling Network.</p>
         </div>
         <nav className="sm:ml-auto flex gap-10">
-          <Link className="text-sm text-[#5f6368] hover:text-[#1a73e8] hover:underline underline-offset-4" href="#">
+          <Link className="text-sm text-[#5f6368] hover:text-[#6426d9] hover:underline underline-offset-4" href="#">
             Products
           </Link>
-          <Link className="text-sm text-[#5f6368] hover:text-[#1a73e8] hover:underline underline-offset-4" href="#">
+          <Link className="text-sm text-[#5f6368] hover:text-[#6426d9] hover:underline underline-offset-4" href="#">
             Security
           </Link>
-          <Link className="text-sm text-[#5f6368] hover:text-[#1a73e8] hover:underline underline-offset-4" href="#">
+          <Link className="text-sm text-[#5f6368] hover:text-[#6426d9] hover:underline underline-offset-4" href="#">
             Terms
           </Link>
-          <Link className="text-sm text-[#5f6368] hover:text-[#1a73e8] hover:underline underline-offset-4" href="#">
+          <Link className="text-sm text-[#5f6368] hover:text-[#6426d9] hover:underline underline-offset-4" href="#">
             Privacy
           </Link>
         </nav>

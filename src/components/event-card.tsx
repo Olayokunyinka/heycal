@@ -69,7 +69,7 @@ export function EventCard({ event, username, isTrashView = false }: EventCardPro
   return (
     <div className="google-card p-6 flex flex-col h-full bg-white border border-transparent group relative transition-all duration-300 hover:border-gray-200">
       <div className="flex justify-between items-start mb-6">
-        <div className="h-12 w-12 rounded-full bg-[#f0f4f9] flex items-center justify-center text-[#0b57d0] transition-colors group-hover:bg-[#dce9fd]">
+        <div className="h-12 w-12 rounded-full bg-[#f3edff] flex items-center justify-center text-[#5120b8] transition-colors group-hover:bg-[#e4d8ff]">
           <Video size={24} />
         </div>
         
@@ -134,7 +134,7 @@ export function EventCard({ event, username, isTrashView = false }: EventCardPro
       <div className="flex gap-2 pt-4 border-t border-gray-100 mt-auto">
         {!isTrashView ? (
           <>
-            <Button variant="ghost" size="sm" className="px-6 rounded-full text-[#1a73e8] hover:bg-[#f8f9fa] font-medium" asChild>
+            <Button variant="ghost" size="sm" className="px-6 rounded-full text-[#6426d9] hover:bg-[#f8f9fa] font-medium" asChild>
               <Link href={`/dashboard/events/${event.id}`}>Edit</Link>
             </Button>
             <CopyLinkButton url={`/${username}/${event.slug}`} />

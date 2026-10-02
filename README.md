@@ -120,6 +120,19 @@ src/
 - **availability** — per-day working hours for each user
 - **bookings** — guest reservations against an event type, optionally linked to a Google Calendar event
 
+## Website Booking Handoff
+
+Set a **Website return URL** when creating or editing an event. After a guest books, Heycal offers a button back to that URL. From the successful-submit handler for a website contact form, redirect to the event URL with the visitor's name and email:
+
+```js
+const bookingUrl = new URL("https://cal.heyclift.xyz/your-username/your-event-slug");
+bookingUrl.searchParams.set("name", formData.get("name") || "");
+bookingUrl.searchParams.set("email", formData.get("email") || "");
+window.location.assign(bookingUrl.toString());
+```
+
+Replace the example path with the event's public URL. The booking page validates the email and pre-fills both fields; visitors can review or change them. These values travel in the URL, so only pass the name and email needed to complete booking.
+
 ## Deployment
 
 The app deploys to [Vercel](https://vercel.com). Set the environment variables from the table above in your Vercel project settings before deploying:

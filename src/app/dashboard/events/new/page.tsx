@@ -33,6 +33,7 @@ const formSchema = z.object({
   slug: z.string().min(2, "Slug must be at least 2 characters"),
   locationType: z.enum(["google_meet", "in_person", "phone", "custom", "none"]),
   locationDetails: z.string().optional(),
+  websiteReturnUrl: z.string().trim().max(2048).optional(),
   questions: z.array(z.object({
     text: z.string().max(300, "Keep each question under 300 characters"),
   })).max(10, "Add no more than 10 questions"),
@@ -51,6 +52,7 @@ export default function NewEventPage() {
       slug: "",
       locationType: "google_meet",
       locationDetails: "",
+      websiteReturnUrl: "",
       questions: [{ text: "" }],
     },
   });
@@ -181,6 +183,22 @@ export default function NewEventPage() {
                 )}
               />
             )}
+            <FormField
+              control={form.control}
+              name="websiteReturnUrl"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[#1f1f1f]">Website return URL</FormLabel>
+                  <FormControl>
+                    <Input type="url" placeholder="https://yourcompany.com/thanks" {...field} />
+                  </FormControl>
+                  <FormDescription className="text-xs text-[#5f6368]">
+                    After booking, guests can return to this page. Website forms can prefill `name` and `email` on the booking URL.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <div className="space-y-3">
               <div>
                 <FormLabel className="text-[#1f1f1f]">Questions for invitees</FormLabel>
@@ -228,7 +246,7 @@ export default function NewEventPage() {
               <Button type="button" variant="outline" className="rounded-full" onClick={() => router.back()}>
                 Cancel
               </Button>
-              <Button type="submit" className="rounded-full bg-[#1a73e8] hover:bg-[#1557b0]">
+              <Button type="submit" className="rounded-full bg-[#6426d9] hover:bg-[#4b1cac]">
                 Create Event Type
               </Button>
             </div>

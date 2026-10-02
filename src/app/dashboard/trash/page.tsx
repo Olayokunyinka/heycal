@@ -31,10 +31,10 @@ export default async function TrashPage() {
         <h1 className="text-2xl font-normal text-[#1f1f1f]">Trash</h1>
       </div>
 
-      <div className="bg-[#e8f0fe] rounded-xl p-4 mb-8 flex items-start gap-3 border border-[#d2e3fc] reveal-up">
-        <Info className="h-5 w-5 text-[#1a73e8] mt-0.5" />
+      <div className="bg-[#efe7ff] rounded-xl p-4 mb-8 flex items-start gap-3 border border-[#decfff] reveal-up">
+        <Info className="h-5 w-5 text-[#6426d9] mt-0.5" />
         <div className="text-sm text-[#3c4043]">
-          <p className="font-medium text-[#1a73e8]">Items in trash will be deleted forever after 30 days.</p>
+          <p className="font-medium text-[#6426d9]">Items in trash will be deleted forever after 30 days.</p>
           <p className="mt-1">Events here won&apos;t be visible to your guests until they are restored.</p>
         </div>
       </div>

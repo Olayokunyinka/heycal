@@ -19,6 +19,7 @@ export const eventTypes = sqliteTable("event_types", {
   duration: integer("duration").notNull(), // in minutes
   locationType: text("location_type").$type<"google_meet" | "in_person" | "phone" | "custom" | "none">().notNull().default("none"),
   locationDetails: text("location_details"),
+  websiteReturnUrl: text("website_return_url"),
   customQuestions: text("custom_questions").notNull().default("[]"),
   isActive: integer("is_active", { mode: "boolean" }).default(true).notNull(),
   isStarred: integer("is_starred", { mode: "boolean" }).default(false).notNull(),

@@ -9,10 +9,16 @@ export const dynamic = "force-dynamic";
 
 export default async function PublicBookingPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ username: string; eventSlug: string }>;
+  searchParams: Promise<{ name?: string | string[]; email?: string | string[] }>;
 }) {
   const { username, eventSlug } = await params;
+  const query = await searchParams;
+  const initialName = typeof query.name === "string" ? query.name.trim().slice(0, 120) : "";
+  const candidateEmail = typeof query.email === "string" ? query.email.trim().slice(0, 254) : "";
+  const initialEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(candidateEmail) ? candidateEmail : "";
 
   const user = await db.query.users.findFirst({
     where: (u, { eq }) => eq(u.username, username),
@@ -36,20 +42,20 @@ export default async function PublicBookingPage({
         <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
           <Avatar className="h-16 w-16 mb-6 border border-gray-100">
             <AvatarImage src={user.imageUrl || ""} />
-            <AvatarFallback className="bg-[#e8f0fe] text-[#1a73e8]">{user.name?.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="bg-[#efe7ff] text-[#6426d9]">{user.name?.charAt(0)}</AvatarFallback>
           </Avatar>
           <h2 className="text-sm font-medium text-[#5f6368] mb-1">{user.name}</h2>
           <h1 className="text-2xl font-normal text-[#1f1f1f] mb-6">{eventType.name}</h1>
           <div className="flex items-center text-sm text-[#5f6368] mb-6">
-            <Clock className="mr-3 h-5 w-5 text-[#1a73e8]" />
+            <Clock className="mr-3 h-5 w-5 text-[#6426d9]" />
             {eventType.duration} minutes
           </div>
           {eventType.locationType !== "none" && (
             <div className="flex items-start text-sm text-[#5f6368] mb-6">
               {eventType.locationType === "google_meet" ? (
-                <Video className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-[#1a73e8]" />
+                <Video className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-[#6426d9]" />
               ) : (
-                <MapPin className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-[#1a73e8]" />
+                <MapPin className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-[#6426d9]" />
               )}
               <div>
                 <p className="font-medium text-[#1f1f1f]">
@@ -75,6 +81,9 @@ export default async function PublicBookingPage({
               questions: parseEventQuestions(eventType.customQuestions),
             }}
             hostId={user.id}
+            initialName={initialName}
+            initialEmail={initialEmail}
+            returnUrl={eventType.websiteReturnUrl}
           />
         </div>
       </div>

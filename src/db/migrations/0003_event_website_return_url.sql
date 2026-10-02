@@ -1,0 +1,1 @@
+ALTER TABLE `event_types` ADD `website_return_url` text;

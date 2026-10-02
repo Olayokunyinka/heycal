@@ -22,18 +22,31 @@ interface EventType {
   questions: string[];
 }
 
-export function BookingForm({ eventType, hostId }: { eventType: EventType; hostId: string }) {
+export function BookingForm({
+  eventType,
+  hostId,
+  initialName,
+  initialEmail,
+  returnUrl,
+}: {
+  eventType: EventType;
+  hostId: string;
+  initialName: string;
+  initialEmail: string;
+  returnUrl: string | null;
+}) {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState(1); // 1: Date/Time, 2: Details, 3: Success
 
-  const [guestName, setGuestName] = useState("");
-  const [guestEmail, setGuestEmail] = useState("");
+  const [guestName, setGuestName] = useState(initialName);
+  const [guestEmail, setGuestEmail] = useState(initialEmail);
   const [guestNotes, setGuestNotes] = useState("");
   const [guestAnswers, setGuestAnswers] = useState<string[]>([]);
   const [meetingUrl, setMeetingUrl] = useState<string | null>(null);
+  const [invitationSent, setInvitationSent] = useState(false);
 
   const fetchSlots = useCallback(async (date: Date) => {
     setIsLoading(true);
@@ -69,6 +82,7 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
         startTime: selectedSlot,
       });
       setMeetingUrl(result.meetingUrl);
+      setInvitationSent(result.invitationSent);
       setStep(3);
       toast.success("Meeting booked successfully!");
     } catch (err) {
@@ -88,20 +102,39 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
           </svg>
         </div>
         <h2 className="text-2xl font-normal text-[#1f1f1f] mb-4">You&apos;re all set!</h2>
-        <p className="text-[#5f6368] mb-4 max-w-sm">
+        <p className="text-[#5f6368] mb-6 max-w-sm">
           Your {eventType.name} has been scheduled.
+          {invitationSent
+            ? ` An invitation was sent to ${guestEmail}.`
+            : " The host will follow up with the event details."}
         </p>
-        {meetingUrl && (
-          <a
-            className="mb-8 inline-flex items-center gap-2 font-medium text-[#1a73e8] underline underline-offset-4"
-            href={meetingUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Video className="h-4 w-4" /> Join Google Meet
-          </a>
-        )}
-        <Button className="rounded-full px-8" onClick={() => window.location.reload()}>Book another</Button>
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          {meetingUrl && (
+            <Button asChild className="rounded-full bg-[#6426d9] hover:bg-[#4b1cac]">
+              <a href={meetingUrl} target="_blank" rel="noreferrer">
+                <Video className="mr-2 h-4 w-4" /> Join Google Meet
+              </a>
+            </Button>
+          )}
+          {returnUrl && (
+            <Button asChild variant="outline" className="rounded-full">
+              <a href={returnUrl}>Return to website</a>
+            </Button>
+          )}
+          {invitationSent && getInboxUrl(guestEmail) && (
+            <Button asChild variant="outline" className="rounded-full">
+              <a href={getInboxUrl(guestEmail)!} target="_blank" rel="noreferrer">
+                Check your email
+              </a>
+            </Button>
+          )}
+          {invitationSent && !getInboxUrl(guestEmail) && (
+            <Button asChild variant="outline" className="rounded-full">
+              <a href={`mailto:${encodeURIComponent(guestEmail)}`}>Open email app</a>
+            </Button>
+          )}
+        </div>
+        <Button variant="ghost" className="rounded-full px-8" onClick={() => window.location.reload()}>Book another</Button>
       </div>
     );
   }
@@ -128,7 +161,7 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
             </h3>
             {isLoading ? (
               <div className="flex items-center justify-center h-64">
-                <Loader2 className="h-8 w-8 animate-spin text-[#1a73e8]" />
+                <Loader2 className="h-8 w-8 animate-spin text-[#6426d9]" />
               </div>
             ) : availableSlots.length > 0 ? (
               <div className="grid grid-cols-1 gap-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
@@ -202,7 +235,7 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
                 <textarea
                   id={`question-${index}`}
                   name={`question-${index}`}
-                  className="w-full min-h-[88px] rounded-lg border border-gray-200 bg-transparent px-3 py-2 text-sm outline-none focus:border-[#1a73e8] focus:ring-1 focus:ring-[#1a73e8] transition-all"
+                  className="w-full min-h-[88px] rounded-lg border border-gray-200 bg-transparent px-3 py-2 text-sm outline-none focus:border-[#6426d9] focus:ring-1 focus:ring-[#6426d9] transition-all"
                   value={guestAnswers[index] ?? ""}
                   onChange={(event) => {
                     setGuestAnswers((answers) => {
@@ -220,7 +253,7 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
               <textarea
                 id="notes"
                 name="notes"
-                className="w-full min-h-[120px] rounded-lg border border-gray-200 bg-transparent px-3 py-2 text-sm outline-none focus:border-[#1a73e8] focus:ring-1 focus:ring-[#1a73e8] transition-all placeholder:text-[#5f6368]"
+                className="w-full min-h-[120px] rounded-lg border border-gray-200 bg-transparent px-3 py-2 text-sm outline-none focus:border-[#6426d9] focus:ring-1 focus:ring-[#6426d9] transition-all placeholder:text-[#5f6368]"
                 value={guestNotes}
                 onChange={(e) => setGuestNotes(e.target.value)}
                 placeholder="Anything else you'd like to share?"
@@ -228,7 +261,7 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
             </div>
             <Button
               type="submit"
-              className="w-full h-12 rounded-full mt-4 bg-[#1a73e8] hover:bg-[#1557b0]"
+              className="w-full h-12 rounded-full mt-4 bg-[#6426d9] hover:bg-[#4b1cac]"
               size="lg"
               disabled={isLoading}
             >
@@ -240,4 +273,13 @@ export function BookingForm({ eventType, hostId }: { eventType: EventType; hostI
       )}
     </div>
   );
+}
+
+function getInboxUrl(email: string): string | null {
+  const domain = email.split("@")[1]?.toLowerCase();
+  if (domain === "gmail.com" || domain === "googlemail.com") return "https://mail.google.com/mail/u/0/#inbox";
+  if (["outlook.com", "hotmail.com", "live.com", "msn.com"].includes(domain ?? "")) return "https://outlook.live.com/mail/0/inbox";
+  if (["yahoo.com", "yahoo.co.uk", "ymail.com"].includes(domain ?? "")) return "https://mail.yahoo.com/d/folders/1";
+  if (domain === "icloud.com" || domain === "me.com") return "https://www.icloud.com/mail";
+  return null;
 }

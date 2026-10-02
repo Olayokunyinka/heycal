@@ -84,7 +84,7 @@ function AvailabilityRow({ day, initialData }: AvailabilityRowProps) {
               variant="ghost" 
               onClick={handleSave}
               disabled={isLoading}
-              className="ml-2 rounded-full h-9 w-9 p-0 text-[#1a73e8] hover:bg-[#e8f0fe] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              className="ml-2 rounded-full h-9 w-9 p-0 text-[#6426d9] hover:bg-[#efe7ff] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
             >
               <Save size={18} />
             </Button>

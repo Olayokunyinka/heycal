@@ -57,7 +57,7 @@ export function BookingsList({
               }
             >
               <div className="flex items-center gap-4">
-                <div className="bg-[#f0f4f9] h-12 w-12 rounded-full flex items-center justify-center text-[#0b57d0] font-medium text-lg transition-colors group-hover:bg-[#dce9fd]">
+                <div className="bg-[#f3edff] h-12 w-12 rounded-full flex items-center justify-center text-[#5120b8] font-medium text-lg transition-colors group-hover:bg-[#e4d8ff]">
                   {booking.guestName.charAt(0).toUpperCase()}
                 </div>
                 <div>
@@ -130,7 +130,7 @@ export function BookingsList({
                       </div>
                       <div>
                         <p className="text-sm text-[#5f6368]">Google Meet</p>
-                        <a className="text-sm font-medium text-[#1a73e8] underline underline-offset-4" href={booking.meetingUrl} target="_blank" rel="noreferrer">
+                        <a className="text-sm font-medium text-[#6426d9] underline underline-offset-4" href={booking.meetingUrl} target="_blank" rel="noreferrer">
                           Join meeting
                         </a>
                       </div>

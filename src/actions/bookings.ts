@@ -76,6 +76,7 @@ export async function createBookingAction(data: {
   }
 
   let meetingUrl: string | null = null;
+  let invitationSent = false;
   if (calendar) {
     try {
       const response = await calendar.events.insert({
@@ -129,6 +130,7 @@ export async function createBookingAction(data: {
           googleEventId: response.data.id,
           meetingUrl,
         }).where(eq(bookings.id, bookingId));
+        invitationSent = true;
       }
     } catch (error) {
       console.error("Failed to add to Google Calendar", error);
@@ -139,5 +141,5 @@ export async function createBookingAction(data: {
     }
   }
 
-  return { success: true, meetingUrl };
+  return { success: true, meetingUrl, invitationSent };
 }

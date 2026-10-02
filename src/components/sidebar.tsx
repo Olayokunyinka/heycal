@@ -51,13 +51,13 @@ export function Sidebar() {
               className={cn(
                 "flex items-center gap-3 px-4 py-3 rounded-r-full text-sm font-medium transition-all duration-200",
                 isActive
-                  ? "bg-[#e2e7ff] text-[#0b57d0]"
+                  ? "bg-[#e4d8ff] text-[#5120b8]"
                   : "text-[#444746] hover:bg-[#1f1f1f0a]",
               )}
             >
               <item.icon
                 size={20}
-                className={cn("transition-colors duration-200", isActive ? "text-[#0b57d0]" : "text-[#444746]")}
+                className={cn("transition-colors duration-200", isActive ? "text-[#5120b8]" : "text-[#444746]")}
               />
               {item.label}
             </Link>
@@ -72,13 +72,13 @@ export function Sidebar() {
           <span className="text-sm">Storage (12% full)</span>
         </div>
         <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-          <div className="bg-[#1a73e8] h-full w-[12%]" />
+          <div className="bg-[#6426d9] h-full w-[12%]" />
         </div>
         <p className="text-xs text-[#5f6368] mt-2">1.8 GB of 15 GB used</p>
         <Button
           variant="outline"
           onClick={() => handleUtilityClick("Storage plans")}
-          className="mt-4 w-full rounded-full border-gray-300 text-[#1a73e8] hover:bg-[#eaf1fb] h-9"
+          className="mt-4 w-full rounded-full border-gray-300 text-[#6426d9] hover:bg-[#f3edff] h-9"
         >
           Get more storage
         </Button>
