@@ -17,6 +17,9 @@ export const eventTypes = sqliteTable("event_types", {
   name: text("name").notNull(),
   description: text("description"),
   duration: integer("duration").notNull(), // in minutes
+  locationType: text("location_type").$type<"google_meet" | "in_person" | "phone" | "custom" | "none">().notNull().default("none"),
+  locationDetails: text("location_details"),
+  customQuestions: text("custom_questions").notNull().default("[]"),
   isActive: integer("is_active", { mode: "boolean" }).default(true).notNull(),
   isStarred: integer("is_starred", { mode: "boolean" }).default(false).notNull(),
   isDeleted: integer("is_deleted", { mode: "boolean" }).default(false).notNull(),
@@ -41,8 +44,10 @@ export const bookings = sqliteTable("bookings", {
   guestName: text("guest_name").notNull(),
   guestEmail: text("guest_email").notNull(),
   guestNotes: text("guest_notes"),
+  guestAnswers: text("guest_answers").notNull().default("[]"),
   startTime: integer("start_time", { mode: "timestamp" }).notNull(),
   endTime: integer("end_time", { mode: "timestamp" }).notNull(),
   googleEventId: text("google_event_id"),
+  meetingUrl: text("meeting_url"),
   createdAt: integer("created_at", { mode: "timestamp" }).default(sql`CURRENT_TIMESTAMP`).notNull(),
 });

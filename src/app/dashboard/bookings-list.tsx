@@ -17,6 +17,8 @@ interface Booking {
   guestName: string;
   guestEmail: string;
   guestNotes: string | null;
+  guestAnswers: { question: string; answer: string }[];
+  meetingUrl: string | null;
   startTime: Date | number;
   endTime: Date | number;
   eventTypeId: string;
@@ -31,15 +33,7 @@ export function BookingsList({
   initialBookings, 
   eventTypes 
 }: { 
-  initialBookings: {
-    id: string;
-    guestName: string;
-    guestEmail: string;
-    guestNotes: string | null;
-    startTime: Date | number;
-    endTime: Date | number;
-    eventTypeId: string;
-  }[], 
+  initialBookings: Booking[],
   eventTypes: EventType[] 
 }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -128,6 +122,37 @@ export function BookingsList({
                       </p>
                     </div>
                   </div>
+
+                  {booking.meetingUrl && (
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-[#5f6368]">
+                        <Video size={20} />
+                      </div>
+                      <div>
+                        <p className="text-sm text-[#5f6368]">Google Meet</p>
+                        <a className="text-sm font-medium text-[#1a73e8] underline underline-offset-4" href={booking.meetingUrl} target="_blank" rel="noreferrer">
+                          Join meeting
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
+                  {booking.guestAnswers.length > 0 && (
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-[#5f6368]">
+                        <MessageSquare size={20} />
+                      </div>
+                      <div className="flex-1 space-y-3">
+                        <p className="text-sm text-[#5f6368]">Invitee answers</p>
+                        {booking.guestAnswers.map(({ question, answer }) => (
+                          <div key={question}>
+                            <p className="text-sm font-medium text-[#1f1f1f]">{question}</p>
+                            <p className="mt-1 text-sm text-[#3c4043]">{answer}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {booking.guestNotes && (
                     <div className="flex items-start gap-4">

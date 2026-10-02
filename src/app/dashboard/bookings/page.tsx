@@ -3,6 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { BookingsList } from "../bookings-list";
 import { Users } from "lucide-react";
+import { parseGuestAnswers } from "@/lib/event-questions";
 
 export const dynamic = "force-dynamic";
 
@@ -43,7 +44,10 @@ export default async function BookingsPage() {
           </div>
           <div className="google-card overflow-hidden">
             <BookingsList 
-              initialBookings={allBookings} 
+              initialBookings={allBookings.map((booking) => ({
+                ...booking,
+                guestAnswers: parseGuestAnswers(booking.guestAnswers),
+              }))}
               eventTypes={userEventTypes.map(e => ({ id: e.id, name: e.name }))} 
             />
           </div>

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { BookingsList } from "./bookings-list";
 import { EventCard } from "@/components/event-card";
+import { parseGuestAnswers } from "@/lib/event-questions";
 
 export const dynamic = "force-dynamic";
 
@@ -189,7 +190,10 @@ export default async function DashboardPage({
           ) : (
             <div className="google-card overflow-hidden">
               <BookingsList
-                initialBookings={allBookings}
+                initialBookings={allBookings.map((booking) => ({
+                  ...booking,
+                  guestAnswers: parseGuestAnswers(booking.guestAnswers),
+                }))}
                 eventTypes={userEventTypes.map((e) => ({
                   id: e.id,
                   name: e.name,

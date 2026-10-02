@@ -6,18 +6,34 @@ import { auth } from "@clerk/nextjs/server";
 import { nanoid } from "nanoid";
 import { revalidatePath } from "next/cache";
 import { and, eq } from "drizzle-orm";
+import { serializeEventQuestions } from "@/lib/event-questions";
+
+type EventLocationType = "google_meet" | "in_person" | "phone" | "custom" | "none";
+
+const eventLocationTypes: EventLocationType[] = ["google_meet", "in_person", "phone", "custom", "none"];
+
+function validateLocationType(locationType: string): asserts locationType is EventLocationType {
+  if (!eventLocationTypes.includes(locationType as EventLocationType)) {
+    throw new Error("Choose a valid event location");
+  }
+}
 
 export async function createEventType(values: {
   name: string;
   description?: string;
   duration: number;
   slug: string;
+  locationType: EventLocationType;
+  locationDetails?: string;
+  questions?: string;
 }) {
   const { userId } = await auth();
 
   if (!userId) {
     throw new Error("Unauthorized");
   }
+
+  validateLocationType(values.locationType);
 
   await db.insert(eventTypes).values({
     id: nanoid(),
@@ -26,6 +42,9 @@ export async function createEventType(values: {
     description: values.description,
     duration: values.duration,
     slug: values.slug,
+    locationType: values.locationType,
+    locationDetails: values.locationDetails?.trim() || null,
+    customQuestions: serializeEventQuestions(values.questions),
   });
 
   revalidatePath("/dashboard");
@@ -37,12 +56,17 @@ export async function updateEventType(id: string, values: {
   duration: number;
   slug: string;
   isActive: boolean;
+  locationType: EventLocationType;
+  locationDetails?: string;
+  questions?: string;
 }) {
   const { userId } = await auth();
 
   if (!userId) {
     throw new Error("Unauthorized");
   }
+
+  validateLocationType(values.locationType);
 
   await db.update(eventTypes)
     .set({
@@ -51,6 +75,9 @@ export async function updateEventType(id: string, values: {
       duration: values.duration,
       slug: values.slug,
       isActive: values.isActive,
+      locationType: values.locationType,
+      locationDetails: values.locationDetails?.trim() || null,
+      customQuestions: serializeEventQuestions(values.questions),
     })
     .where(and(eq(eventTypes.id, id), eq(eventTypes.userId, userId)));
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { createEventType } from "@/actions/event-types";
@@ -23,14 +31,12 @@ const formSchema = z.object({
   description: z.string().optional(),
   duration: z.number().min(1, "Duration must be at least 1 minute"),
   slug: z.string().min(2, "Slug must be at least 2 characters"),
+  locationType: z.enum(["google_meet", "in_person", "phone", "custom", "none"]),
+  locationDetails: z.string().optional(),
+  questions: z.string().optional(),
 });
 
-type FormValues = {
-  name: string;
-  description?: string;
-  duration: number;
-  slug: string;
-};
+type FormValues = z.infer<typeof formSchema>;
 
 export default function NewEventPage() {
   const router = useRouter();
@@ -41,8 +47,12 @@ export default function NewEventPage() {
       description: "",
       duration: 30,
       slug: "",
+      locationType: "google_meet",
+      locationDetails: "",
+      questions: "",
     },
   });
+  const locationType = useWatch({ control: form.control, name: "locationType" });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
@@ -117,6 +127,70 @@ export default function NewEventPage() {
                   <FormControl>
                     <Input placeholder="Brief description of the meeting" {...field} />
                   </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="locationType"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[#1f1f1f]">Location</FormLabel>
+                  <Select value={field.value} onValueChange={field.onChange}>
+                    <FormControl>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Choose a location" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="google_meet">Google Meet</SelectItem>
+                      <SelectItem value="in_person">In person</SelectItem>
+                      <SelectItem value="phone">Phone call</SelectItem>
+                      <SelectItem value="custom">Custom location</SelectItem>
+                      <SelectItem value="none">No location</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormDescription className="text-xs text-[#5f6368]">
+                    Google Meet links are created when you connect Google Calendar.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {locationType !== "google_meet" && locationType !== "none" && (
+              <FormField
+                control={form.control}
+                name="locationDetails"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-[#1f1f1f]">
+                      {locationType === "in_person" ? "Address" : locationType === "phone" ? "Phone details" : "Location details"}
+                    </FormLabel>
+                    <FormControl>
+                      <Input placeholder="Add directions or joining details" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
+            <FormField
+              control={form.control}
+              name="questions"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[#1f1f1f]">Questions for invitees</FormLabel>
+                  <FormControl>
+                    <textarea
+                      className="flex min-h-24 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                      placeholder={"What would you like to discuss?\nAnything I should prepare?"}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription className="text-xs text-[#5f6368]">
+                    Add one question per line. Invitees answer these after choosing a time.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

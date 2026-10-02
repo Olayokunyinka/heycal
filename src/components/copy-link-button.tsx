@@ -7,7 +7,7 @@ import { Copy } from "lucide-react";
 export function CopyLinkButton({ url }: { url: string }) {
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(new URL(url, window.location.origin).toString());
       toast.success("Link copied to clipboard!");
     } catch (error) {
       toast.error("Failed to copy link");

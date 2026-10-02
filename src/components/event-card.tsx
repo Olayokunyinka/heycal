@@ -137,7 +137,7 @@ export function EventCard({ event, username, isTrashView = false }: EventCardPro
             <Button variant="ghost" size="sm" className="px-6 rounded-full text-[#1a73e8] hover:bg-[#f8f9fa] font-medium" asChild>
               <Link href={`/dashboard/events/${event.id}`}>Edit</Link>
             </Button>
-            <CopyLinkButton url={`${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/${username}/${event.slug}`} />
+            <CopyLinkButton url={`/${username}/${event.slug}`} />
           </>
         ) : (
           <Button variant="outline" size="sm" className="w-full rounded-full" onClick={handleRestore}>

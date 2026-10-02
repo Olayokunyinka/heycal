@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -14,11 +14,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { updateEventType, deleteEventType } from "@/actions/event-types";
 import { Trash2 } from "lucide-react";
+import { parseEventQuestions } from "@/lib/event-questions";
 import {
   Dialog,
   DialogContent,
@@ -35,6 +43,9 @@ const formSchema = z.object({
   duration: z.number().min(1, "Duration must be at least 1 minute"),
   slug: z.string().min(2, "Slug must be at least 2 characters"),
   isActive: z.boolean(),
+  locationType: z.enum(["google_meet", "in_person", "phone", "custom", "none"]),
+  locationDetails: z.string().optional(),
+  questions: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -46,6 +57,9 @@ interface EventType {
   duration: number;
   slug: string;
   isActive: boolean;
+  locationType: "google_meet" | "in_person" | "phone" | "custom" | "none";
+  locationDetails: string | null;
+  customQuestions: string;
 }
 
 export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
@@ -58,8 +72,12 @@ export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
       duration: eventType.duration,
       slug: eventType.slug,
       isActive: eventType.isActive,
+      locationType: eventType.locationType,
+      locationDetails: eventType.locationDetails || "",
+      questions: parseEventQuestions(eventType.customQuestions).join("\n"),
     },
   });
+  const locationType = useWatch({ control: form.control, name: "locationType" });
 
   async function onSubmit(values: FormValues) {
     try {
@@ -160,6 +178,70 @@ export function EditEventTypeForm({ eventType }: { eventType: EventType }) {
                 <FormControl>
                   <Input placeholder="Brief description of the meeting" {...field} />
                 </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="locationType"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-[#1f1f1f]">Location</FormLabel>
+                <Select value={field.value} onValueChange={field.onChange}>
+                  <FormControl>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Choose a location" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="google_meet">Google Meet</SelectItem>
+                    <SelectItem value="in_person">In person</SelectItem>
+                    <SelectItem value="phone">Phone call</SelectItem>
+                    <SelectItem value="custom">Custom location</SelectItem>
+                    <SelectItem value="none">No location</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormDescription className="text-xs text-[#5f6368]">
+                  Google Meet links are created when you connect Google Calendar.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          {locationType !== "google_meet" && locationType !== "none" && (
+            <FormField
+              control={form.control}
+              name="locationDetails"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[#1f1f1f]">
+                    {locationType === "in_person" ? "Address" : locationType === "phone" ? "Phone details" : "Location details"}
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="Add directions or joining details" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
+          <FormField
+            control={form.control}
+            name="questions"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-[#1f1f1f]">Questions for invitees</FormLabel>
+                <FormControl>
+                  <textarea
+                    className="flex min-h-24 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                    placeholder={"What would you like to discuss?\nAnything I should prepare?"}
+                    {...field}
+                  />
+                </FormControl>
+                <FormDescription className="text-xs text-[#5f6368]">
+                  Add one question per line. Invitees answer these after choosing a time.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
