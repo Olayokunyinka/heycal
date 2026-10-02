@@ -85,6 +85,10 @@ export function BookingForm({
         startTime: selectedSlot,
         bookingIntentToken: handoffToken,
       });
+      if (!result.success) {
+        toast.error(result.message);
+        return;
+      }
       setMeetingUrl(result.meetingUrl);
       setInvitationSent(result.invitationSent);
       setGuestConfirmationSent(result.guestConfirmationSent);

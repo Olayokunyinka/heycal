@@ -1,0 +1,4243 @@
+[
+  {
+    "source": {
+      "level": "error",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:26.908Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":authority",
+              ":scheme",
+              ":path",
+              "content-length",
+              "sec-ch-ua-platform",
+              "next-action",
+              "sec-ch-ua",
+              "sec-ch-ua-mobile",
+              "next-router-state-tree",
+              "user-agent",
+              "accept",
+              "content-type",
+              "origin",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "sec-fetch-dest",
+              "referer",
+              "accept-encoding",
+              "accept-language",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "priority"
+            ],
+            "colo": "AMS",
+            "asOrganization": "MTN Nigeria",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "38qspVhhEQN2/NUBzV/aRJPTqeWjqYr/IkPfLRRlyv8=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "G5W8LTp/bIZcn1lY4j+qfIW32hA=",
+            "tlsClientExtensionsSha1Le": "G3tO9y4WWw2aL/nPqoCpMhS82+k=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "7d1aa00128c6fc2a763a854ed448418abf1e3dd525a55f4ec689b3d48e639c8f",
+              "serverHandshake": "ecb1ed8f3197eeee9ee77b3e8759e99c8fbc93e18284cdfee8896ecc1dc57d41",
+              "clientFinished": "4fe07ff2519b5674a77e489799501727a2916a70f0821141d621a317282f4161",
+              "serverFinished": "d2bcb5d8f7813ebd37a677c1cfb8dfd5b49d81d3d2c567ca71fee04d5f1c4f2a"
+            },
+            "tlsClientHelloLength": "1947",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 166,
+            "asn": 29465,
+            "edgeL4": {
+              "deliveryRate": 147548
+            }
+          },
+          "headers": {
+            "accept": "text/x-component",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "cf-connecting-ip": "102.88.166.231",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a44240dd88b9434e",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "content-length": "244",
+            "content-type": "text/plain;charset=UTF-8",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "next-action": "4035fb42a375bcf10c153ad5685815cb230447f86f",
+            "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%5B%22username%22%2C%22useclift_1790920769246%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%5B%22eventSlug%22%2C%2220-min%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C16%5D",
+            "origin": "https://cal.heyclift.xyz",
+            "priority": "u=1, i",
+            "referer": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "102.88.166.231"
+          },
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+        },
+        "path": "/useclift_1790920769246/20-min",
+        "response": {
+          "status": 500
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 2202,
+      "cpuTimeMs": 738
+    },
+    "$metadata": {
+      "id": "01M3XTVKJW000000000000000J",
+      "requestId": "01a19610ab69e71204575e14cb54a2f6",
+      "rayId": "a44240dd88b9434e",
+      "traceId": "91fd5969c554210ae1724b103bb2517c",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928866908000000",
+      "service": "heycal",
+      "level": "error",
+      "error": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "    at p (worker.js:338497:142)\n    at async rM (worker.js:41383:25)\n    at async worker.js:41336:157\n    at async rN (worker.js:41258:22)\n    at async lL (worker.js:45197:27)\n    at async o2 (worker.js:345498:24)\n    at async uO.handleResponse (worker.js:46640:57)\n    at async q2 (worker.js:345565:28)\n    at async Module.O [as handler] (worker.js:345632:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:26.908Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTVKJW000000000000000G",
+      "requestId": "01a19610ab69e71204575e14cb54a2f6",
+      "rayId": "a44240dd88b9434e",
+      "traceId": "91fd5969c554210ae1724b103bb2517c",
+      "spanId": "3bc8a6f15f3b1b8a",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928866908000000",
+      "service": "heycal",
+      "level": "error",
+      "error": "    at p (worker.js:338497:142)\n    at async rM (worker.js:41383:25)\n    at async worker.js:41336:157\n    at async rN (worker.js:41258:22)\n    at async lL (worker.js:45197:27)\n    at async o2 (worker.js:345498:24)\n    at async uO.handleResponse (worker.js:46640:57)\n    at async q2 (worker.js:345565:28)\n    at async Module.O [as handler] (worker.js:345632:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)",
+      "message": "    at p (worker.js:338497:142)\n    at async rM (worker.js:41383:25)\n    at async worker.js:41336:157\n    at async rN (worker.js:41258:22)\n    at async lL (worker.js:45197:27)\n    at async o2 (worker.js:345498:24)\n    at async uO.handleResponse (worker.js:46640:57)\n    at async q2 (worker.js:345565:28)\n    at async Module.O [as handler] (worker.js:345632:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/icon.png?icon.0czj4v_zlp00f.png="
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:14.094Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":authority",
+              ":scheme",
+              ":path",
+              "sec-ch-ua-platform",
+              "user-agent",
+              "sec-ch-ua",
+              "sec-ch-ua-mobile",
+              "accept",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "sec-fetch-dest",
+              "referer",
+              "accept-encoding",
+              "accept-language",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "priority"
+            ],
+            "colo": "AMS",
+            "asOrganization": "MTN Nigeria",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "38qspVhhEQN2/NUBzV/aRJPTqeWjqYr/IkPfLRRlyv8=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "G5W8LTp/bIZcn1lY4j+qfIW32hA=",
+            "tlsClientExtensionsSha1Le": "G3tO9y4WWw2aL/nPqoCpMhS82+k=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "7d1aa00128c6fc2a763a854ed448418abf1e3dd525a55f4ec689b3d48e639c8f",
+              "serverHandshake": "ecb1ed8f3197eeee9ee77b3e8759e99c8fbc93e18284cdfee8896ecc1dc57d41",
+              "clientFinished": "4fe07ff2519b5674a77e489799501727a2916a70f0821141d621a317282f4161",
+              "serverFinished": "d2bcb5d8f7813ebd37a677c1cfb8dfd5b49d81d3d2c567ca71fee04d5f1c4f2a"
+            },
+            "tlsClientHelloLength": "1947",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 179,
+            "asn": 29465,
+            "edgeL4": {
+              "deliveryRate": 147548
+            }
+          },
+          "headers": {
+            "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "cf-connecting-ip": "102.88.166.231",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a44240956ff4434e",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "priority": "u=1, i",
+            "referer": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "image",
+            "sec-fetch-mode": "no-cors",
+            "sec-fetch-site": "same-origin",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "102.88.166.231"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/icon.png?icon.0czj4v_zlp00f.png="
+        },
+        "path": "/icon.png",
+        "search": {
+          "icon": {
+            "0czj4v_zlp00f": {
+              "png": ""
+            }
+          }
+        },
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 150,
+      "cpuTimeMs": 140
+    },
+    "$metadata": {
+      "id": "01M3XTV72E0000000000000002",
+      "requestId": "1593310fb0384801796759d6627963f6",
+      "rayId": "a44240956ff4434e",
+      "traceId": "7f6fd226d6d24141867a8ee15c9da490",
+      "trigger": "GET /icon.png",
+      "timestampNs": "1790928854094000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/icon.png?icon.0czj4v_zlp00f.png=",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:13.583Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":authority",
+              ":scheme",
+              ":path",
+              "content-length",
+              "sec-ch-ua-platform",
+              "next-action",
+              "sec-ch-ua",
+              "sec-ch-ua-mobile",
+              "next-router-state-tree",
+              "user-agent",
+              "accept",
+              "content-type",
+              "origin",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "sec-fetch-dest",
+              "referer",
+              "accept-encoding",
+              "accept-language",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "priority"
+            ],
+            "colo": "AMS",
+            "asOrganization": "MTN Nigeria",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "38qspVhhEQN2/NUBzV/aRJPTqeWjqYr/IkPfLRRlyv8=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "G5W8LTp/bIZcn1lY4j+qfIW32hA=",
+            "tlsClientExtensionsSha1Le": "G3tO9y4WWw2aL/nPqoCpMhS82+k=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "7d1aa00128c6fc2a763a854ed448418abf1e3dd525a55f4ec689b3d48e639c8f",
+              "serverHandshake": "ecb1ed8f3197eeee9ee77b3e8759e99c8fbc93e18284cdfee8896ecc1dc57d41",
+              "clientFinished": "4fe07ff2519b5674a77e489799501727a2916a70f0821141d621a317282f4161",
+              "serverFinished": "d2bcb5d8f7813ebd37a677c1cfb8dfd5b49d81d3d2c567ca71fee04d5f1c4f2a"
+            },
+            "tlsClientHelloLength": "1947",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 179,
+            "asn": 29465,
+            "edgeL4": {
+              "deliveryRate": 147548
+            }
+          },
+          "headers": {
+            "accept": "text/x-component",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "cf-connecting-ip": "102.88.166.231",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a44240956fd0434e",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "content-length": "52",
+            "content-type": "text/plain;charset=UTF-8",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "next-action": "70f7c6b59fc0e7d2bf56674895e12abd9fc89f231c",
+            "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%5B%22username%22%2C%22useclift_1790920769246%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%5B%22eventSlug%22%2C%2220-min%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C16%5D",
+            "origin": "https://cal.heyclift.xyz",
+            "priority": "u=1, i",
+            "referer": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "102.88.166.231"
+          },
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+        },
+        "path": "/useclift_1790920769246/20-min",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 251,
+      "cpuTimeMs": 20
+    },
+    "$metadata": {
+      "id": "01M3XTV6JF000000000000000D",
+      "requestId": "7d31f99837a962d523d12b17eaad7838",
+      "rayId": "a44240956fd0434e",
+      "traceId": "a1a538633823e0d6fc455de3c1899fca",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928853583000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "message": "Available slots calculated: 24"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:13.583Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTV6JF000000000000000B",
+      "requestId": "7d31f99837a962d523d12b17eaad7838",
+      "rayId": "a44240956fd0434e",
+      "traceId": "a1a538633823e0d6fc455de3c1899fca",
+      "spanId": "4eb10829e2ca092d",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928853583000000",
+      "service": "heycal",
+      "message": "Available slots calculated: 24",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "message": "Generated 24 slots for friday"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:13.583Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTV6JF000000000000000A",
+      "requestId": "7d31f99837a962d523d12b17eaad7838",
+      "rayId": "a44240956fd0434e",
+      "traceId": "a1a538633823e0d6fc455de3c1899fca",
+      "spanId": "4eb10829e2ca092d",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928853583000000",
+      "service": "heycal",
+      "message": "Generated 24 slots for friday",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "message": "Availability for friday:"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:13.583Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTV6JF0000000000000009",
+      "requestId": "7d31f99837a962d523d12b17eaad7838",
+      "rayId": "a44240956fd0434e",
+      "traceId": "a1a538633823e0d6fc455de3c1899fca",
+      "spanId": "4eb10829e2ca092d",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928853583000000",
+      "service": "heycal",
+      "message": "Availability for friday:",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "message": "Busy slots found: 0"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:13.521Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTV6GH0000000000000005",
+      "requestId": "7d31f99837a962d523d12b17eaad7838",
+      "rayId": "a44240956fd0434e",
+      "traceId": "a1a538633823e0d6fc455de3c1899fca",
+      "spanId": "4eb10829e2ca092d",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928853521000000",
+      "service": "heycal",
+      "message": "Busy slots found: 0",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "message": "Fetching availability for user_3K7p2078pKXjiHBabQyB7vBV0hp on Fri Oct 02 2026"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:13.349Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTV6B50000000000000001",
+      "requestId": "7d31f99837a962d523d12b17eaad7838",
+      "rayId": "a44240956fd0434e",
+      "traceId": "a1a538633823e0d6fc455de3c1899fca",
+      "spanId": "4eb10829e2ca092d",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928853349000000",
+      "service": "heycal",
+      "message": "Fetching availability for user_3K7p2078pKXjiHBabQyB7vBV0hp on Fri Oct 02 2026",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:12.170Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":authority",
+              ":scheme",
+              ":path",
+              "cache-control",
+              "sec-ch-ua",
+              "sec-ch-ua-mobile",
+              "sec-ch-ua-platform",
+              "upgrade-insecure-requests",
+              "user-agent",
+              "accept",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "sec-fetch-user",
+              "sec-fetch-dest",
+              "accept-encoding",
+              "accept-language",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "priority"
+            ],
+            "colo": "AMS",
+            "asOrganization": "MTN Nigeria",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "38qspVhhEQN2/NUBzV/aRJPTqeWjqYr/IkPfLRRlyv8=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "G5W8LTp/bIZcn1lY4j+qfIW32hA=",
+            "tlsClientExtensionsSha1Le": "G3tO9y4WWw2aL/nPqoCpMhS82+k=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "7d1aa00128c6fc2a763a854ed448418abf1e3dd525a55f4ec689b3d48e639c8f",
+              "serverHandshake": "ecb1ed8f3197eeee9ee77b3e8759e99c8fbc93e18284cdfee8896ecc1dc57d41",
+              "clientFinished": "4fe07ff2519b5674a77e489799501727a2916a70f0821141d621a317282f4161",
+              "serverFinished": "d2bcb5d8f7813ebd37a677c1cfb8dfd5b49d81d3d2c567ca71fee04d5f1c4f2a"
+            },
+            "tlsClientHelloLength": "1947",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 133,
+            "asn": 29465,
+            "edgeL4": {
+              "deliveryRate": 11062
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "cache-control": "max-age=0",
+            "cf-connecting-ip": "102.88.166.231",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a442408c9880434e",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "same-origin",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "102.88.166.231"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+        },
+        "path": "/useclift_1790920769246/20-min",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 373,
+      "cpuTimeMs": 163
+    },
+    "$metadata": {
+      "id": "01M3XTV56A0000000000000008",
+      "requestId": "375d700c9321e557d420f690406f48ed",
+      "rayId": "a442408c9880434e",
+      "traceId": "12d7e6102811b8ce00f649701779c84e",
+      "trigger": "GET /useclift_1790920769246/20-min",
+      "timestampNs": "1790928852170000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:05.792Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":authority",
+              ":scheme",
+              ":path",
+              "content-length",
+              "sec-ch-ua-platform",
+              "next-action",
+              "sec-ch-ua",
+              "sec-ch-ua-mobile",
+              "next-router-state-tree",
+              "user-agent",
+              "accept",
+              "content-type",
+              "origin",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "sec-fetch-dest",
+              "referer",
+              "accept-encoding",
+              "accept-language",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "priority"
+            ],
+            "colo": "AMS",
+            "asOrganization": "MTN Nigeria",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "38qspVhhEQN2/NUBzV/aRJPTqeWjqYr/IkPfLRRlyv8=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "G5W8LTp/bIZcn1lY4j+qfIW32hA=",
+            "tlsClientExtensionsSha1Le": "G3tO9y4WWw2aL/nPqoCpMhS82+k=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "7d1aa00128c6fc2a763a854ed448418abf1e3dd525a55f4ec689b3d48e639c8f",
+              "serverHandshake": "ecb1ed8f3197eeee9ee77b3e8759e99c8fbc93e18284cdfee8896ecc1dc57d41",
+              "clientFinished": "4fe07ff2519b5674a77e489799501727a2916a70f0821141d621a317282f4161",
+              "serverFinished": "d2bcb5d8f7813ebd37a677c1cfb8dfd5b49d81d3d2c567ca71fee04d5f1c4f2a"
+            },
+            "tlsClientHelloLength": "1947",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 132,
+            "asn": 29465,
+            "edgeL4": {
+              "deliveryRate": 11062
+            }
+          },
+          "headers": {
+            "accept": "text/x-component",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "cf-connecting-ip": "102.88.166.231",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a4424055febe434e",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "content-length": "216",
+            "content-type": "text/plain;charset=UTF-8",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "next-action": "4035fb42a375bcf10c153ad5685815cb230447f86f",
+            "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%5B%22username%22%2C%22useclift_1790920769246%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%5B%22eventSlug%22%2C%2220-min%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C16%5D",
+            "origin": "https://cal.heyclift.xyz",
+            "priority": "u=1, i",
+            "referer": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "102.88.166.231"
+          },
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+        },
+        "path": "/useclift_1790920769246/20-min",
+        "response": {
+          "status": 500
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 2189,
+      "cpuTimeMs": 981
+    },
+    "$metadata": {
+      "id": "01M3XTTYZ0000000000000000J",
+      "requestId": "1f29b380c8994585db3aea75f2c0f31f",
+      "rayId": "a4424055febe434e",
+      "traceId": "98633b1876ee93f6f32cbbb8655d5e2e",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928845792000000",
+      "service": "heycal",
+      "level": "error",
+      "error": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "    at p (worker.js:338497:142)\n    at async rM (worker.js:41383:25)\n    at async worker.js:41336:157\n    at async rN (worker.js:41258:22)\n    at async lL (worker.js:45197:27)\n    at async o2 (worker.js:345498:24)\n    at async uO.handleResponse (worker.js:46640:57)\n    at async q2 (worker.js:345565:28)\n    at async Module.O [as handler] (worker.js:345632:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:14:05.792Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "32b0fe87-3077-49e3-ab12-4f665a7e0148"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XTTYZ0000000000000000G",
+      "requestId": "1f29b380c8994585db3aea75f2c0f31f",
+      "rayId": "a4424055febe434e",
+      "traceId": "98633b1876ee93f6f32cbbb8655d5e2e",
+      "spanId": "c92a4c3db99997f0",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790928845792000000",
+      "service": "heycal",
+      "level": "error",
+      "error": "    at p (worker.js:338497:142)\n    at async rM (worker.js:41383:25)\n    at async worker.js:41336:157\n    at async rN (worker.js:41258:22)\n    at async lL (worker.js:45197:27)\n    at async o2 (worker.js:345498:24)\n    at async uO.handleResponse (worker.js:46640:57)\n    at async q2 (worker.js:345565:28)\n    at async Module.O [as handler] (worker.js:345632:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)",
+      "message": "    at p (worker.js:338497:142)\n    at async rM (worker.js:41383:25)\n    at async worker.js:41336:157\n    at async rN (worker.js:41258:22)\n    at async lL (worker.js:45197:27)\n    at async o2 (worker.js:345498:24)\n    at async uO.handleResponse (worker.js:46640:57)\n    at async q2 (worker.js:345565:28)\n    at async Module.O [as handler] (worker.js:345632:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/licensor.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:07:00.666Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 62,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1873335
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44236051ac24d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/licensor.js"
+        },
+        "path": "/licensor.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 37,
+      "cpuTimeMs": 35
+    },
+    "$metadata": {
+      "id": "01M3XTDZST0000000000000002",
+      "requestId": "3924e41cc19f00a27b0c951d8ce0c4cf",
+      "rayId": "a44236051ac24d6a",
+      "traceId": "6ee1813fff01c73d62da7ef05494132a",
+      "trigger": "GET /licensor.js",
+      "timestampNs": "1790928420666000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/licensor.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/assets/js/auth.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:59.916Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 44,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1873335
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44236006ed24d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/assets/js/auth.js"
+        },
+        "path": "/assets/js/auth.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 40,
+      "cpuTimeMs": 39
+    },
+    "$metadata": {
+      "id": "01M3XTDZ2C0000000000000002",
+      "requestId": "d0b19aae6af5bd375fb1b7b0b1051c65",
+      "rayId": "a44236006ed24d6a",
+      "traceId": "f5ef6d34a65e1d561070a895b19ebf52",
+      "trigger": "GET /assets/js/auth.js",
+      "timestampNs": "1790928419916000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/assets/js/auth.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/_next/image?url=%2Fheycal-mark.png&amp%3Bw=48&amp%3Bq=75"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:59.793Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 43,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1873335
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235ffae414d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/_next/image?url=%2Fheycal-mark.png&amp%3Bw=48&amp%3Bq=75"
+        },
+        "path": "/_next/image",
+        "search": {
+          "url": "/heycal-mark.png",
+          "amp;w": 48,
+          "amp;q": 75
+        },
+        "response": {
+          "status": 400
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 1,
+      "cpuTimeMs": 0
+    },
+    "$metadata": {
+      "id": "01M3XTDYYH0000000000000002",
+      "requestId": "aa718d917c1211a95c3553e6529103c6",
+      "rayId": "a44235ffae414d6a",
+      "traceId": "353e70e1741c358924e2e41d7548166a",
+      "trigger": "GET /_next/image",
+      "timestampNs": "1790928419793000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/_next/image?url=%2Fheycal-mark.png&amp%3Bw=48&amp%3Bq=75",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/css/support_parent.css"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:59.465Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 19,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1873335
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235fd1bd04d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/css/support_parent.css"
+        },
+        "path": "/css/support_parent.css",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 104,
+      "cpuTimeMs": 29
+    },
+    "$metadata": {
+      "id": "01M3XTDYM90000000000000005",
+      "requestId": "1d6d01db7f2d51994b97fe76ae637f2c",
+      "rayId": "a44235fd1bd04d6a",
+      "traceId": "ce7d97f15e5662f08a6035517bc5acb2",
+      "trigger": "GET /css/support_parent.css",
+      "timestampNs": "1790928419465000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/css/support_parent.css",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/qrcode_twint.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:59.024Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 28,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 9617
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235fa79ba4d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/js/qrcode_twint.js"
+        },
+        "path": "/js/qrcode_twint.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 127,
+      "cpuTimeMs": 77
+    },
+    "$metadata": {
+      "id": "01M3XTDY6G0000000000000005",
+      "requestId": "a8dba0816d0173f35b1113a2f77d9e87",
+      "rayId": "a44235fa79ba4d6a",
+      "traceId": "23464dca14337ad52874aae41ad9a163",
+      "trigger": "GET /js/qrcode_twint.js",
+      "timestampNs": "1790928419024000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/qrcode_twint.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/twint_ch.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:58.271Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 36,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1091555
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235f52cb24d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/js/twint_ch.js"
+        },
+        "path": "/js/twint_ch.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 198,
+      "cpuTimeMs": 42
+    },
+    "$metadata": {
+      "id": "01M3XTDXEZ0000000000000005",
+      "requestId": "dffc432688f2c293bdcb278d6d197c33",
+      "rayId": "a44235f52cb24d6a",
+      "traceId": "5d681cba4d3b013ffab55e95e01939d4",
+      "trigger": "GET /js/twint_ch.js",
+      "timestampNs": "1790928418271000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/twint_ch.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/_next/image?url=%2Fheycal-mark.png&amp%3Bw=96&amp%3Bq=75"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:57.931Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 20,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1091555
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235f40bc84d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/_next/image?url=%2Fheycal-mark.png&amp%3Bw=96&amp%3Bq=75"
+        },
+        "path": "/_next/image",
+        "search": {
+          "url": "/heycal-mark.png",
+          "amp;w": 96,
+          "amp;q": 75
+        },
+        "response": {
+          "status": 400
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 2,
+      "cpuTimeMs": 1
+    },
+    "$metadata": {
+      "id": "01M3XTDX4B0000000000000002",
+      "requestId": "b76ecac8dabef1abe8f558aa14275523",
+      "rayId": "a44235f40bc84d6a",
+      "traceId": "6aa60ac149496818ab5f3919fa6a4721",
+      "trigger": "GET /_next/image",
+      "timestampNs": "1790928417931000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/_next/image?url=%2Fheycal-mark.png&amp%3Bw=96&amp%3Bq=75",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/assets/js/message.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:57.678Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 28,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1091555
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235f26a6b4d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/assets/js/message.js"
+        },
+        "path": "/assets/js/message.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 35,
+      "cpuTimeMs": 33
+    },
+    "$metadata": {
+      "id": "01M3XTDWWE0000000000000002",
+      "requestId": "286d827dc771a68634b7081e54c14a87",
+      "rayId": "a44235f26a6b4d6a",
+      "traceId": "f44b7f73529348163f0783800c354dc2",
+      "trigger": "GET /assets/js/message.js",
+      "timestampNs": "1790928417678000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/assets/js/message.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/static/style/protect/index.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:57.606Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 32,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1091555
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235f1fa0d4d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/static/style/protect/index.js"
+        },
+        "path": "/static/style/protect/index.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 41,
+      "cpuTimeMs": 39
+    },
+    "$metadata": {
+      "id": "01M3XTDWT60000000000000002",
+      "requestId": "ce117b0088c715ea55df4673ced2f4ad",
+      "rayId": "a44235f1fa0d4d6a",
+      "traceId": "4c100062122bf5cfa521ad8f74674468",
+      "trigger": "GET /static/style/protect/index.js",
+      "timestampNs": "1790928417606000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/static/style/protect/index.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/raif_ch.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:57.222Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 33,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1091555
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235ea5b404d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/js/raif_ch.js"
+        },
+        "path": "/js/raif_ch.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 949,
+      "cpuTimeMs": 211
+    },
+    "$metadata": {
+      "id": "01M3XTDWE60000000000000005",
+      "requestId": "cb29d12e2fd567357a87077bbd0f8bcd",
+      "rayId": "a44235ea5b404d6a",
+      "traceId": "7cf380d329c2f9c28173cff7a371e0e8",
+      "trigger": "GET /js/raif_ch.js",
+      "timestampNs": "1790928417222000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/raif_ch.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/static/style/sys_files/index.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:56.262Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 31,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 1091555
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235e98a8a4d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/static/style/sys_files/index.js"
+        },
+        "path": "/static/style/sys_files/index.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 49,
+      "cpuTimeMs": 47
+    },
+    "$metadata": {
+      "id": "01M3XTDVG60000000000000002",
+      "requestId": "b4b985bf9d6b37a1a8bb13f9f697bc3f",
+      "rayId": "a44235e98a8a4d6a",
+      "traceId": "1eb92674e5ce3b066b7e2ad660bc1c12",
+      "trigger": "GET /static/style/sys_files/index.js",
+      "timestampNs": "1790928416262000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/static/style/sys_files/index.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/bot-connect.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:55.456Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "ZeTBUecPbtZkXhEQR8h6zaY60/BL0PV4Fpj37SrKN9g=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "HWyU2Phr72ea2TZgt9i9Yt0IOcg=",
+            "tlsClientExtensionsSha1Le": "lX++WYqStMt2sd40/0n1QMvXG5g=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "b93a496c76d2bf2f2dade2304e128bf75f32a9a0dfbb97553ebfa1c11528ec07f72df22008140fbfa74165053550d7a3",
+              "serverHandshake": "18df1170a3c3587d65db9d63a28052ad592bc617940ce5f8f775ed52c42ac7098e66ef390a537c0bbcfe7fe1c8ba51eb",
+              "clientFinished": "5f73b03b2c4a090a342f84e3123f6c35a331f8a25ea9b71addb7805827488109e6f64004e6a0df11a4eee161fd1ac445",
+              "serverFinished": "593304c0aab72a99a6f72990e2c29829ef1bf717b672360efc1d2935f1f921b6523fca225a25de5201f026bfd49d02d6"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 22,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 233076
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235dc8d904d6a",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/bot-connect.js"
+        },
+        "path": "/bot-connect.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 473,
+      "cpuTimeMs": 459
+    },
+    "$metadata": {
+      "id": "01M3XTDTQ00000000000000002",
+      "requestId": "93ddda84f45efc570911d34f1b8a199b",
+      "rayId": "a44235dc8d904d6a",
+      "traceId": "b330ead94f5b082370f54a153dfde3b3",
+      "trigger": "GET /bot-connect.js",
+      "timestampNs": "1790928415456000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/bot-connect.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/robots.txt"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:48.985Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "rFKFB3fZ2CS9iylJ8I69/5zr1Y/tJvI//hONKlmZHW8=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "F2zDOKxdEmu4gKy2XeoT4Mb/15k=",
+            "tlsClientExtensionsSha1Le": "7MjKDi+52yspvJMAUSH/Soxmz8E=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "f8f2fe5f235d6125f35c825ea1a106e60814363817e03c416fba3e902be8944f16bd76d5e4fbecccb44459c624773783",
+              "serverHandshake": "63aa90c8e2a9f9aa9a9a023133b32b79a8905a5cefa5bb8fd36e3baf9f3c90d16ca421297c47fe1af06bfe8face6596b",
+              "clientFinished": "a6c80486529d7392ad08385e144f01f09fc98f36871c48c5c8773a5a9d5001a274a85ff203618213a21cff55ee665e57",
+              "serverFinished": "8cd35cb8fb5b13b50cd54111915a168ebbb06bb85cbbcb2cc6dfef968ef765926192c814b7b2d06d25d307769d157e76"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 28,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 373258
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235bc18e3d25d",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/robots.txt"
+        },
+        "path": "/robots.txt",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 82,
+      "cpuTimeMs": 74
+    },
+    "$metadata": {
+      "id": "01M3XTDMCS0000000000000002",
+      "requestId": "51c51120c6b1541f5172d4dfa47f865d",
+      "rayId": "a44235bc18e3d25d",
+      "traceId": "f2902c5a873b1ec38c6215b80e031fb9",
+      "trigger": "GET /robots.txt",
+      "timestampNs": "1790928408985000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/robots.txt",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/icon.png?icon.0czj4v_zlp00f.png="
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:48.781Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "rFKFB3fZ2CS9iylJ8I69/5zr1Y/tJvI//hONKlmZHW8=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "F2zDOKxdEmu4gKy2XeoT4Mb/15k=",
+            "tlsClientExtensionsSha1Le": "7MjKDi+52yspvJMAUSH/Soxmz8E=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "f8f2fe5f235d6125f35c825ea1a106e60814363817e03c416fba3e902be8944f16bd76d5e4fbecccb44459c624773783",
+              "serverHandshake": "63aa90c8e2a9f9aa9a9a023133b32b79a8905a5cefa5bb8fd36e3baf9f3c90d16ca421297c47fe1af06bfe8face6596b",
+              "clientFinished": "a6c80486529d7392ad08385e144f01f09fc98f36871c48c5c8773a5a9d5001a274a85ff203618213a21cff55ee665e57",
+              "serverFinished": "8cd35cb8fb5b13b50cd54111915a168ebbb06bb85cbbcb2cc6dfef968ef765926192c814b7b2d06d25d307769d157e76"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 15,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 238415
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235b5ee38d25d",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/icon.png?icon.0czj4v_zlp00f.png="
+        },
+        "path": "/icon.png",
+        "search": {
+          "icon": {
+            "0czj4v_zlp00f": {
+              "png": ""
+            }
+          }
+        },
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 140,
+      "cpuTimeMs": 133
+    },
+    "$metadata": {
+      "id": "01M3XTDM6D0000000000000002",
+      "requestId": "e7da1faeb71f40c24d0ca41c591041a6",
+      "rayId": "a44235b5ee38d25d",
+      "traceId": "154f3d14ae816ed9c23bca7f3049f8c0",
+      "trigger": "GET /icon.png",
+      "timestampNs": "1790928408781000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/icon.png?icon.0czj4v_zlp00f.png=",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/assets/js/qr_modal.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:42.800Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "zOT10yDZ7H1qLIviPNOSbbbWdcnfaKmom2K/ePSJpmE=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "JF/sosFE4JH4wHFasHa+DuOM3kQ=",
+            "tlsClientExtensionsSha1Le": "fIu1OuOPo1gPdUBIxbixsHjIApU=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "5d684e7e96b7bce5cd6ce2dbfacc4cda8f489871c23a167122e59b011cb2142ef512fe608731f43ced28907125e9cac8",
+              "serverHandshake": "1eff30cd8a1111b3958ae0c476b6f2d6f39a507666869e714d3d3a1459372768627f60122ee840df667f041d51bb0d48",
+              "clientFinished": "0d1455bffb711fd4120b5ad88a17fe52a7b486ba3df6007284b5e7df94847254b0d7ec816e126c1652cfcbd442232e95",
+              "serverFinished": "371b71c5e6d1df91bca60c94c1b7d4ede215ae75acd86c8eb710ce8eda25fa407bab4f2b7bf00d1d15936584b9d77a5a"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 43,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 2044143
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a44235956af0dc81",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/assets/js/qr_modal.js"
+        },
+        "path": "/assets/js/qr_modal.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 37,
+      "cpuTimeMs": 30
+    },
+    "$metadata": {
+      "id": "01M3XTDEBG0000000000000002",
+      "requestId": "8274e393aa75c41406f22054f013e2c2",
+      "rayId": "a44235956af0dc81",
+      "traceId": "d5b6adff2321d4ce5db61fecf9277601",
+      "trigger": "GET /assets/js/qr_modal.js",
+      "timestampNs": "1790928402800000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/assets/js/qr_modal.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/antibot-client.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:42.475Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "zOT10yDZ7H1qLIviPNOSbbbWdcnfaKmom2K/ePSJpmE=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "JF/sosFE4JH4wHFasHa+DuOM3kQ=",
+            "tlsClientExtensionsSha1Le": "fIu1OuOPo1gPdUBIxbixsHjIApU=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "5d684e7e96b7bce5cd6ce2dbfacc4cda8f489871c23a167122e59b011cb2142ef512fe608731f43ced28907125e9cac8",
+              "serverHandshake": "1eff30cd8a1111b3958ae0c476b6f2d6f39a507666869e714d3d3a1459372768627f60122ee840df667f041d51bb0d48",
+              "clientFinished": "0d1455bffb711fd4120b5ad88a17fe52a7b486ba3df6007284b5e7df94847254b0d7ec816e126c1652cfcbd442232e95",
+              "serverFinished": "371b71c5e6d1df91bca60c94c1b7d4ede215ae75acd86c8eb710ce8eda25fa407bab4f2b7bf00d1d15936584b9d77a5a"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 51,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 2044143
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a4423592886adc81",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/js/antibot-client.js"
+        },
+        "path": "/js/antibot-client.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 162,
+      "cpuTimeMs": 24
+    },
+    "$metadata": {
+      "id": "01M3XTDE1B0000000000000005",
+      "requestId": "2c3285e9ab54c5b0d4ab74ad6d2a6595",
+      "rayId": "a4423592886adc81",
+      "traceId": "0d83f69da02dbc76f0397140e9541251",
+      "trigger": "GET /js/antibot-client.js",
+      "timestampNs": "1790928402475000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/antibot-client.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/lkk_ch.js"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:41.625Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "zOT10yDZ7H1qLIviPNOSbbbWdcnfaKmom2K/ePSJpmE=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "JF/sosFE4JH4wHFasHa+DuOM3kQ=",
+            "tlsClientExtensionsSha1Le": "fIu1OuOPo1gPdUBIxbixsHjIApU=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "5d684e7e96b7bce5cd6ce2dbfacc4cda8f489871c23a167122e59b011cb2142ef512fe608731f43ced28907125e9cac8",
+              "serverHandshake": "1eff30cd8a1111b3958ae0c476b6f2d6f39a507666869e714d3d3a1459372768627f60122ee840df667f041d51bb0d48",
+              "clientFinished": "0d1455bffb711fd4120b5ad88a17fe52a7b486ba3df6007284b5e7df94847254b0d7ec816e126c1652cfcbd442232e95",
+              "serverFinished": "371b71c5e6d1df91bca60c94c1b7d4ede215ae75acd86c8eb710ce8eda25fa407bab4f2b7bf00d1d15936584b9d77a5a"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 273,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 429295
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a442358abcaadc81",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/js/lkk_ch.js"
+        },
+        "path": "/js/lkk_ch.js",
+        "response": {
+          "status": 404
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 628,
+      "cpuTimeMs": 134
+    },
+    "$metadata": {
+      "id": "01M3XTDD6S0000000000000005",
+      "requestId": "5aa7c58dd669ed41d1530e1d5bc8c357",
+      "rayId": "a442358abcaadc81",
+      "traceId": "4e91ba4252911fee461d5df2abb85c80",
+      "trigger": "GET /js/lkk_ch.js",
+      "timestampNs": "1790928401625000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/js/lkk_ch.js",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:06:39.744Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/2",
+            "clientAcceptEncoding": "gzip, deflate",
+            "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "accept",
+              "accept-language",
+              "user-agent",
+              "accept-encoding"
+            ],
+            "colo": "FRA",
+            "asOrganization": "M247 Europe - Zurich Infrastructure",
+            "country": "CH",
+            "city": "Zürich",
+            "continent": "EU",
+            "region": "Zurich",
+            "regionCode": "ZH",
+            "timezone": "Europe/Zurich",
+            "longitude": "8.4488",
+            "latitude": "47.395",
+            "postalCode": "8010",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "zOT10yDZ7H1qLIviPNOSbbbWdcnfaKmom2K/ePSJpmE=",
+            "tlsClientCiphersSha1": "WUS9+h7TjVkF9aEouGuCEMjGQGA=",
+            "tlsClientExtensionsSha1": "JF/sosFE4JH4wHFasHa+DuOM3kQ=",
+            "tlsClientExtensionsSha1Le": "fIu1OuOPo1gPdUBIxbixsHjIApU=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "5d684e7e96b7bce5cd6ce2dbfacc4cda8f489871c23a167122e59b011cb2142ef512fe608731f43ced28907125e9cac8",
+              "serverHandshake": "1eff30cd8a1111b3958ae0c476b6f2d6f39a507666869e714d3d3a1459372768627f60122ee840df667f041d51bb0d48",
+              "clientFinished": "0d1455bffb711fd4120b5ad88a17fe52a7b486ba3df6007284b5e7df94847254b0d7ec816e126c1652cfcbd442232e95",
+              "serverFinished": "371b71c5e6d1df91bca60c94c1b7d4ede215ae75acd86c8eb710ce8eda25fa407bab4f2b7bf00d1d15936584b9d77a5a"
+            },
+            "tlsClientHelloLength": "252",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 17,
+            "clientQuicRtt": 0,
+            "asn": 9009,
+            "edgeL4": {
+              "deliveryRate": 227815
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9,de-CH;q=0.8,de;q=0.7,ca;q=0.6",
+            "cf-connecting-ip": "146.70.134.142",
+            "cf-ipcountry": "CH",
+            "cf-ray": "a442357d4cbcdc81",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "146.70.134.142"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/"
+        },
+        "path": "/",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "f865439d-3125-4823-b9bb-67d67a2571b2"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 413,
+      "cpuTimeMs": 402
+    },
+    "$metadata": {
+      "id": "01M3XTDBC00000000000000002",
+      "requestId": "7cba2da3aeebd5c24a4c38a45a5307ba",
+      "rayId": "a442357d4cbcdc81",
+      "traceId": "31e56df62ecf726863da4097b3f4ac7d",
+      "trigger": "GET /",
+      "timestampNs": "1790928399744000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/sign-in"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T08:04:34.194Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":scheme",
+              ":authority",
+              ":path",
+              "sec-fetch-dest",
+              "user-agent",
+              "accept",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "accept-language",
+              "priority",
+              "accept-encoding",
+              "cookie",
+              "cookie"
+            ],
+            "colo": "LHR",
+            "asOrganization": "GLOMOBILE-GPRS",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES256-GCM-SHA384",
+            "tlsClientRandom": "njmjfaOVR4etdq//4O0C5Cb7127qcFJrt7J+BID3aV8=",
+            "tlsClientCiphersSha1": "pf8OObhh+TV0fLKfVD3YameuLjA=",
+            "tlsClientExtensionsSha1": "ZNOSQjO2JPrKK3Qgtp3LiIPGRc4=",
+            "tlsClientExtensionsSha1Le": "pPlfDhoVwsHWAdWxyo2RO3StV2Y=",
+            "tlsClientHelloLength": "1730",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 200,
+            "asn": 37148,
+            "edgeL4": {
+              "deliveryRate": 2445
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9",
+            "cf-connecting-ip": "197.211.59.62",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a442326c9ca69880",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "priority": "u=0, i",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "cross-site",
+            "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/154.0.8037.55 Mobile/15E148 Safari/604.1",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "197.211.59.62"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/sign-in"
+        },
+        "path": "/sign-in",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "6b53810f-ee4d-4f14-9ec2-aac44a33274e"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 313,
+      "cpuTimeMs": 303
+    },
+    "$metadata": {
+      "id": "01M3XT9GRJ0000000000000002",
+      "requestId": "3d2ea05eac36be61b92f928e6fe9396e",
+      "rayId": "a442326c9ca69880",
+      "traceId": "a5bd8465f239cab3c17173df21ac7ad1",
+      "trigger": "GET /sign-in",
+      "timestampNs": "1790928274194000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/sign-in",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T07:54:41.461Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/1.1",
+            "clientAcceptEncoding": "gzip",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              "Host",
+              "User-Agent",
+              "Accept",
+              "Accept-Language",
+              "Origin",
+              "Referer",
+              "Accept-Encoding",
+              "Connection"
+            ],
+            "colo": "NRT",
+            "asOrganization": "Vultr Holdings, LLC",
+            "country": "JP",
+            "city": "Ebara",
+            "continent": "AS",
+            "region": "Tokyo",
+            "regionCode": "13",
+            "timezone": "Asia/Tokyo",
+            "longitude": "139.70315",
+            "latitude": "35.61298",
+            "postalCode": "142-0063",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "AJpVXHMZLAELc0L6bBIwqb4EY8Z80G2QR8C8B/7Ovkw=",
+            "tlsClientCiphersSha1": "QrF6UadKW3vtNOqdNqbd4frxxxE=",
+            "tlsClientExtensionsSha1": "VmypJ9I6O+wlbe1dI9qycuZ4Ywg=",
+            "tlsClientExtensionsSha1Le": "i+zMiC3iuMzkwC9CUcQV4FcnRkg=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "fce792d3e3035ac978bf8edba63498fa436598e6ad8fdcd73b2508c2af6471f2",
+              "serverHandshake": "2f4f9812471f0cc0627895cf8b202f725229df8801bc3edb278138ed3c63b3ad",
+              "clientFinished": "fd2240cc55006fb8954ef5b4e89162a5f5530109d7cb63dd075eb7e1146c55a9",
+              "serverFinished": "0fc0a5d6f4acff27db9cc0758161707e38aa0da591f879590cea92e9d3c7e26a"
+            },
+            "tlsClientHelloLength": "1499",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 1,
+            "clientQuicRtt": 0,
+            "asn": 20473,
+            "edgeL4": {
+              "deliveryRate": 4018501
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "accept-encoding": "gzip, br",
+            "accept-language": "ja-JP,ja;q=0.9",
+            "cf-connecting-ip": "45.32.28.16",
+            "cf-ipcountry": "JP",
+            "cf-ray": "a44223f388532c1c",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "origin": "https://cal.heyclift.xyz",
+            "referer": "https://cal.heyclift.xyz/",
+            "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "45.32.28.16"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/"
+        },
+        "path": "/",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "11079321-3d66-4116-aeac-c9a672f97031"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 567,
+      "cpuTimeMs": 551
+    },
+    "$metadata": {
+      "id": "01M3XSQDXN0000000000000002",
+      "requestId": "47de9314baacf64be89ebbda509f3bdc",
+      "rayId": "a44223f388532c1c",
+      "traceId": "0c660fc1d9a717b3448e0ba828a39022",
+      "trigger": "GET /",
+      "timestampNs": "1790927681461000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET http://cal.heyclift.xyz:8080/icon.png?icon.0czj4v_zlp00f.png="
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T07:47:45.038Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/1.1",
+            "clientAcceptEncoding": "gzip",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              "Host",
+              "User-Agent",
+              "Connection",
+              "Accept",
+              "Accept-Encoding"
+            ],
+            "colo": "LHR",
+            "asOrganization": "Driftnet Ltd",
+            "country": "GB",
+            "city": "London",
+            "continent": "EU",
+            "region": "England",
+            "regionCode": "ENG",
+            "timezone": "Europe/London",
+            "longitude": "-0.12574",
+            "latitude": "51.50853",
+            "postalCode": "WC2N",
+            "tlsVersion": "",
+            "tlsCipher": "",
+            "tlsClientRandom": "",
+            "tlsClientCiphersSha1": "",
+            "tlsClientExtensionsSha1": "",
+            "tlsClientExtensionsSha1Le": "",
+            "tlsClientHelloLength": "0",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 10,
+            "clientQuicRtt": 0,
+            "asn": 211298,
+            "edgeL4": {
+              "deliveryRate": 0
+            }
+          },
+          "headers": {
+            "accept": "*/*",
+            "accept-encoding": "gzip",
+            "cf-connecting-ip": "87.236.176.174",
+            "cf-ipcountry": "GB",
+            "cf-ray": "a44219c8dbdce902",
+            "cf-visitor": "{\"scheme\":\"http\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz:8080",
+            "user-agent": "Mozilla/5.0 (compatible; InternetMeasurement/1.0; +https://internet-measurement.com/)",
+            "x-forwarded-proto": "http",
+            "x-real-ip": "87.236.176.174"
+          },
+          "method": "GET",
+          "url": "http://cal.heyclift.xyz:8080/icon.png?icon.0czj4v_zlp00f.png="
+        },
+        "path": "/icon.png",
+        "search": {
+          "icon": {
+            "0czj4v_zlp00f": {
+              "png": ""
+            }
+          }
+        },
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "11079321-3d66-4116-aeac-c9a672f97031"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 172,
+      "cpuTimeMs": 169
+    },
+    "$metadata": {
+      "id": "01M3XSAQ8E0000000000000002",
+      "requestId": "3f75c1d48d47a6e7ab50391f33b44c39",
+      "rayId": "a44219c8dbdce902",
+      "traceId": "2ef20901496e0430db76347c778bc480",
+      "trigger": "GET /icon.png",
+      "timestampNs": "1790927265038000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET http://cal.heyclift.xyz:8080/icon.png?icon.0czj4v_zlp00f.png=",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET http://cal.heyclift.xyz:8080/"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T07:47:42.208Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/1.1",
+            "clientAcceptEncoding": "gzip",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              "Host",
+              "User-Agent",
+              "Connection",
+              "Accept",
+              "Accept-Encoding"
+            ],
+            "colo": "LHR",
+            "asOrganization": "Driftnet Ltd",
+            "country": "GB",
+            "city": "London",
+            "continent": "EU",
+            "region": "England",
+            "regionCode": "ENG",
+            "timezone": "Europe/London",
+            "longitude": "-0.12574",
+            "latitude": "51.50853",
+            "postalCode": "WC2N",
+            "tlsVersion": "",
+            "tlsCipher": "",
+            "tlsClientRandom": "",
+            "tlsClientCiphersSha1": "",
+            "tlsClientExtensionsSha1": "",
+            "tlsClientExtensionsSha1Le": "",
+            "tlsClientHelloLength": "0",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 8,
+            "clientQuicRtt": 0,
+            "asn": 211298,
+            "edgeL4": {
+              "deliveryRate": 0
+            }
+          },
+          "headers": {
+            "accept": "*/*",
+            "accept-encoding": "gzip",
+            "cf-connecting-ip": "87.236.176.163",
+            "cf-ipcountry": "GB",
+            "cf-ray": "a44219b82b6ded14",
+            "cf-visitor": "{\"scheme\":\"http\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz:8080",
+            "user-agent": "Mozilla/5.0 (compatible; InternetMeasurement/1.0; +https://internet-measurement.com/)",
+            "x-forwarded-proto": "http",
+            "x-real-ip": "87.236.176.163"
+          },
+          "method": "GET",
+          "url": "http://cal.heyclift.xyz:8080/"
+        },
+        "path": "/",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "11079321-3d66-4116-aeac-c9a672f97031"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 307,
+      "cpuTimeMs": 295
+    },
+    "$metadata": {
+      "id": "01M3XSAMG00000000000000002",
+      "requestId": "9073ce8e41744db5636ada33282be308",
+      "rayId": "a44219b82b6ded14",
+      "traceId": "b207c8ced74db063b00d4e526a352d8d",
+      "trigger": "GET /",
+      "timestampNs": "1790927262208000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET http://cal.heyclift.xyz:8080/",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T07:36:17.761Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "isEUCountry": false,
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/3",
+            "clientAcceptEncoding": "gzip, deflate, br",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              ":method",
+              ":authority",
+              ":scheme",
+              ":path",
+              "content-length",
+              "sec-ch-ua-platform",
+              "next-action",
+              "sec-ch-ua",
+              "sec-ch-ua-mobile",
+              "next-router-state-tree",
+              "user-agent",
+              "accept",
+              "content-type",
+              "origin",
+              "sec-fetch-site",
+              "sec-fetch-mode",
+              "sec-fetch-dest",
+              "referer",
+              "accept-encoding",
+              "accept-language",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "cookie",
+              "priority"
+            ],
+            "colo": "AMS",
+            "asOrganization": "MTN Nigeria",
+            "country": "NG",
+            "city": "Lagos",
+            "continent": "AF",
+            "region": "Lagos",
+            "regionCode": "LA",
+            "timezone": "Africa/Lagos",
+            "longitude": "3.39467",
+            "latitude": "6.45407",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "jV8Jr7p1JxtiySCwU6pUi/y0lymwmQjGVDZg7vRnWpY=",
+            "tlsClientCiphersSha1": "3HTt3+R/6BL3zeALJDSq0pR1yOQ=",
+            "tlsClientExtensionsSha1": "V4f4aOmCpUxgWBCJiH5HU/TO1WQ=",
+            "tlsClientExtensionsSha1Le": "xPQHODjv1Yk9gbC28ZzwJbV0aKk=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "607b11a70370fb31db853b29c6fa877a84acc1e0819bee253ae4528342ea03f1",
+              "serverHandshake": "ec967a5df76bc4b8a51f70c3d359d059f7d0c3d2a33c6e2ca53d031efc624343",
+              "clientFinished": "560da6565adc102982084f322f2e3a835c28ef9242edb2c450cc30f4e8172e85",
+              "serverFinished": "67dbf24a4f48fb6be42c7b5e2a46339a35cd43f285c174cd502ed489d7b50b9b"
+            },
+            "tlsClientHelloLength": "1943",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 0,
+            "clientQuicRtt": 133,
+            "asn": 29465,
+            "edgeL4": {
+              "deliveryRate": 10774
+            }
+          },
+          "headers": {
+            "accept": "text/x-component",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+            "cf-connecting-ip": "102.88.166.231",
+            "cf-ipcountry": "NG",
+            "cf-ray": "a44208edc90206bc",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "content-length": "216",
+            "content-type": "text/plain;charset=UTF-8",
+            "cookie": "REDACTED",
+            "host": "cal.heyclift.xyz",
+            "next-action": "4035fb42a375bcf10c153ad5685815cb230447f86f",
+            "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%5B%22username%22%2C%22useclift_1790920769246%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%5B%22eventSlug%22%2C%2220-min%22%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C0%5D%7D%2Cnull%2Cnull%2C16%5D",
+            "origin": "https://cal.heyclift.xyz",
+            "priority": "u=1, i",
+            "referer": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "102.88.166.231"
+          },
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min"
+        },
+        "path": "/useclift_1790920769246/20-min",
+        "response": {
+          "status": 500
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "11079321-3d66-4116-aeac-c9a672f97031"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 3180,
+      "cpuTimeMs": 1756
+    },
+    "$metadata": {
+      "id": "01M3XRNR31000000000000000J",
+      "requestId": "2eec57aea31553188291550a70ebb0a8",
+      "rayId": "a44208edc90206bc",
+      "traceId": "aaf131478a6e98deab3b93fb51ab4303",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790926577761000000",
+      "service": "heycal",
+      "level": "error",
+      "error": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "message": "POST https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "error",
+      "message": "    at n (worker.js:338541:131)\n    at async rM (worker.js:41375:25)\n    at async worker.js:41328:157\n    at async rN (worker.js:41250:22)\n    at async lL (worker.js:45189:27)\n    at async o2 (worker.js:345385:24)\n    at async uO.handleResponse (worker.js:46632:57)\n    at async q2 (worker.js:345452:28)\n    at async Module.O [as handler] (worker.js:345519:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T07:36:17.761Z",
+    "$workers": {
+      "truncated": false,
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "11079321-3d66-4116-aeac-c9a672f97031"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "event": {
+        "request": {
+          "method": "POST",
+          "url": "https://cal.heyclift.xyz/useclift_1790920769246/20-min",
+          "path": "/useclift_1790920769246/20-min"
+        }
+      }
+    },
+    "$metadata": {
+      "id": "01M3XRNR31000000000000000G",
+      "requestId": "2eec57aea31553188291550a70ebb0a8",
+      "rayId": "a44208edc90206bc",
+      "traceId": "aaf131478a6e98deab3b93fb51ab4303",
+      "spanId": "245852cafbab2424",
+      "trigger": "POST /useclift_1790920769246/20-min",
+      "timestampNs": "1790926577761000000",
+      "service": "heycal",
+      "level": "error",
+      "error": "    at n (worker.js:338541:131)\n    at async rM (worker.js:41375:25)\n    at async worker.js:41328:157\n    at async rN (worker.js:41250:22)\n    at async lL (worker.js:45189:27)\n    at async o2 (worker.js:345385:24)\n    at async uO.handleResponse (worker.js:46632:57)\n    at async q2 (worker.js:345452:28)\n    at async Module.O [as handler] (worker.js:345519:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)",
+      "message": "    at n (worker.js:338541:131)\n    at async rM (worker.js:41375:25)\n    at async worker.js:41328:157\n    at async rN (worker.js:41250:22)\n    at async lL (worker.js:45189:27)\n    at async o2 (worker.js:345385:24)\n    at async uO.handleResponse (worker.js:46632:57)\n    at async q2 (worker.js:345452:28)\n    at async Module.O [as handler] (worker.js:345519:66)\n    at async NextNodeServer.renderToResponseWithComponentsImpl (worker.js:17240:18)",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker",
+      "origin": "fetch"
+    }
+  },
+  {
+    "source": {
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/"
+    },
+    "dataset": "cloudflare-workers",
+    "timestamp": "2026-10-02T07:27:22.049Z",
+    "$workers": {
+      "truncated": false,
+      "event": {
+        "request": {
+          "cf": {
+            "tlsClientAuth": {
+              "certRFC9440TooLarge": false,
+              "certChainRFC9440TooLarge": false,
+              "certPresented": "0",
+              "certVerified": "NONE",
+              "certRevoked": "0",
+              "certIssuerDN": "",
+              "certSubjectDN": "",
+              "certIssuerDNRFC2253": "",
+              "certSubjectDNRFC2253": "",
+              "certIssuerDNLegacy": "",
+              "certSubjectDNLegacy": "",
+              "certSerial": "",
+              "certIssuerSerial": "",
+              "certSKI": "",
+              "certIssuerSKI": "",
+              "certFingerprintSHA1": "",
+              "certFingerprintSHA256": "",
+              "certNotBefore": "",
+              "certNotAfter": "",
+              "certRFC9440": "",
+              "certChainRFC9440": ""
+            },
+            "httpProtocol": "HTTP/1.1",
+            "requestPriority": "",
+            "requestHeaderNames": [
+              "Host",
+              "User-Agent",
+              "Accept"
+            ],
+            "colo": "MXP",
+            "asOrganization": "OMEGATECH",
+            "country": "NL",
+            "isEUCountry": "1",
+            "city": "Amsterdam",
+            "continent": "EU",
+            "region": "North Holland",
+            "regionCode": "NH",
+            "timezone": "Europe/Amsterdam",
+            "longitude": "4.88969",
+            "latitude": "52.37403",
+            "postalCode": "1012",
+            "tlsVersion": "TLSv1.3",
+            "tlsCipher": "AEAD-AES128-GCM-SHA256",
+            "tlsClientRandom": "zRW55JV9YXKWb8/DVoBFFpD+xfj10Ou80gkDJRdOpRw=",
+            "tlsClientCiphersSha1": "QrF6UadKW3vtNOqdNqbd4frxxxE=",
+            "tlsClientExtensionsSha1": "VmypJ9I6O+wlbe1dI9qycuZ4Ywg=",
+            "tlsClientExtensionsSha1Le": "i+zMiC3iuMzkwC9CUcQV4FcnRkg=",
+            "tlsExportedAuthenticator": {
+              "clientHandshake": "2ee4fd5d13c1a38bc9cdcd5c5e9fdd2443c1d9a8bb233e565d1c7cdeee4a17b1",
+              "serverHandshake": "e27a26f33f1b43eebe75c8f21184f7ebc76698caa733571a3c337a8931f6c80b",
+              "clientFinished": "8f305c82ed44877e75b462bf0d08b208a0773a0a42f14146647d987e55523019",
+              "serverFinished": "ffca86bef6937980fc38acb037de1df415858586d52ab737d654ad1031ff933c"
+            },
+            "tlsClientHelloLength": "1495",
+            "verifiedBotCategory": "",
+            "edgeRequestKeepAliveStatus": 1,
+            "clientTcpRtt": 206,
+            "clientQuicRtt": 0,
+            "asn": 202412,
+            "edgeL4": {
+              "deliveryRate": 60557
+            }
+          },
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "accept-encoding": "gzip, br",
+            "cf-connecting-ip": "178.16.54.246",
+            "cf-ipcountry": "NL",
+            "cf-ray": "a441fbeebf1ded5e",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "connection": "Keep-Alive",
+            "host": "cal.heyclift.xyz",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "x-forwarded-proto": "https",
+            "x-real-ip": "178.16.54.246"
+          },
+          "method": "GET",
+          "url": "https://cal.heyclift.xyz/"
+        },
+        "path": "/",
+        "response": {
+          "status": 200
+        }
+      },
+      "scriptName": "heycal",
+      "scriptVersion": {
+        "id": "11079321-3d66-4116-aeac-c9a672f97031"
+      },
+      "eventType": "fetch",
+      "executionModel": "stateless",
+      "outcome": "ok",
+      "wallTimeMs": 295,
+      "cpuTimeMs": 281
+    },
+    "$metadata": {
+      "id": "01M3XR5CY10000000000000002",
+      "requestId": "9fb1c2048de6e455ef581bf1690216cf",
+      "rayId": "a441fbeebf1ded5e",
+      "traceId": "c78902330b9721cb04686f4a9ad48b6e",
+      "trigger": "GET /",
+      "timestampNs": "1790926042049000000",
+      "service": "heycal",
+      "level": "info",
+      "message": "GET https://cal.heyclift.xyz/",
+      "account": "48de573ab4ac895f4002bdfe3716c263",
+      "type": "cf-worker-event",
+      "origin": "fetch"
+    }
+  }
+]

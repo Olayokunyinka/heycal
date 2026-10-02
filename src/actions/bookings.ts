@@ -10,6 +10,10 @@ import { parseEventQuestions } from "@/lib/event-questions";
 import { hashApiKey, sendBookingCreatedWebhook } from "@/lib/integrations";
 import { sendBookingConfirmationEmails } from "@/lib/booking-email";
 
+type BookingActionResult =
+  | { success: true; meetingUrl: string | null; invitationSent: boolean; guestConfirmationSent: boolean }
+  | { success: false; message: string };
+
 export async function createBookingAction(data: {
   eventTypeId: string;
   hostId: string;
@@ -19,8 +23,11 @@ export async function createBookingAction(data: {
   guestAnswers: string[];
   startTime: string;
   bookingIntentToken?: string | null;
-}) {
+}): Promise<BookingActionResult> {
   const startTime = new Date(data.startTime);
+  if (!Number.isFinite(startTime.getTime())) {
+    return { success: false, message: "Choose a valid booking time" };
+  }
   
   // Fetch event type for duration
   const eventType = await db.query.eventTypes.findFirst({
@@ -28,7 +35,7 @@ export async function createBookingAction(data: {
   });
 
   if (!eventType || eventType.userId !== data.hostId || !eventType.isActive || eventType.isDeleted) {
-    throw new Error("This event is no longer available");
+    return { success: false, message: "This event is no longer available" };
   }
 
   const questions = parseEventQuestions(eventType.customQuestions);
@@ -36,10 +43,11 @@ export async function createBookingAction(data: {
   if (answers.length !== questions.length || answers.some((answer) => (
     typeof answer !== "string" || !answer.trim() || answer.length > 2000
   ))) {
-    throw new Error("Please answer each event question");
+    return { success: false, message: "Please answer each event question" };
   }
-  if (!data.guestName.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.guestEmail)) {
-    throw new Error("Enter a valid name and email address");
+  if (typeof data.guestName !== "string" || typeof data.guestEmail !== "string"
+    || !data.guestName.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.guestEmail)) {
+    return { success: false, message: "Enter a valid name and email address" };
   }
 
   const endTime = addMinutes(startTime, eventType.duration);
@@ -61,7 +69,7 @@ export async function createBookingAction(data: {
         gt(bookingIntents.expiresAt, now),
       ));
     if (claim.rowsAffected !== 1) {
-      throw new Error("This website booking link has expired or has already been used. Please submit the contact form again.");
+        return { success: false, message: "This website booking link has expired or has already been used. Please submit the contact form again." };
     }
   }
 
@@ -93,7 +101,16 @@ export async function createBookingAction(data: {
     });
   } catch (error) {
     await releaseHandoffToken();
-    throw error;
+    const dbError = error && typeof error === "object"
+      ? error as { name?: string; message?: string; code?: string; extendedCode?: number }
+      : undefined;
+    console.error("Booking insert failed", JSON.stringify({
+      name: dbError?.name ?? "UnknownError",
+      code: dbError?.code,
+      extendedCode: dbError?.extendedCode,
+      message: dbError?.message ?? String(error),
+    }));
+    return { success: false, message: "We couldn't save this booking. Please try again or contact the event organizer." };
   }
 
   let calendar = null;
@@ -103,7 +120,7 @@ export async function createBookingAction(data: {
     if (eventType.locationType === "google_meet") {
       await db.delete(bookings).where(eq(bookings.id, bookingId));
       await releaseHandoffToken();
-      throw new Error("The host must reconnect Google Calendar with Calendar events access to create a Meet link");
+      return { success: false, message: "The host's Google Calendar connection needs attention before this event can be booked. Please contact the organizer." };
     }
     console.error("Failed to connect to Google Calendar", error);
   }
@@ -111,7 +128,7 @@ export async function createBookingAction(data: {
   if (eventType.locationType === "google_meet" && !calendar) {
     await db.delete(bookings).where(eq(bookings.id, bookingId));
     await releaseHandoffToken();
-    throw new Error("The host must connect Google Calendar before this event can be booked");
+    return { success: false, message: "The host needs to connect Google Calendar before this event can be booked. Please contact the organizer." };
   }
 
   let meetingUrl: string | null = null;
@@ -163,7 +180,9 @@ export async function createBookingAction(data: {
       if (response.data.id) {
         meetingUrl = response.data.hangoutLink ?? response.data.conferenceData?.entryPoints?.find((entry) => entry.entryPointType === "video")?.uri ?? null;
         if (eventType.locationType === "google_meet" && !meetingUrl) {
-          throw new Error("Google Calendar did not return a Meet link");
+          await db.delete(bookings).where(eq(bookings.id, bookingId));
+          await releaseHandoffToken();
+          return { success: false, message: "Google Calendar could not create a Meet link. Please contact the organizer." };
         }
         await db.update(bookings).set({
           googleEventId: response.data.id,
@@ -176,7 +195,7 @@ export async function createBookingAction(data: {
       if (eventType.locationType === "google_meet") {
         await db.delete(bookings).where(eq(bookings.id, bookingId));
         await releaseHandoffToken();
-        throw new Error("Google Calendar could not create a Meet link. Reconnect Google Calendar and try again");
+        return { success: false, message: "Google Calendar couldn't create a Meet link. Please contact the organizer." };
       }
     }
   }
