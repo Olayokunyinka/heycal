@@ -120,7 +120,14 @@ export default function NewEventPage() {
                 <FormItem>
                   <FormLabel className="text-[#1f1f1f]">Duration (minutes)</FormLabel>
                   <FormControl>
-                    <Input type="number" {...field} />
+                    <Input
+                      type="number"
+                      min={1}
+                      step={1}
+                      {...field}
+                      value={field.value}
+                      onChange={(event) => field.onChange(event.target.valueAsNumber)}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -133,7 +140,11 @@ export default function NewEventPage() {
                 <FormItem>
                   <FormLabel className="text-[#1f1f1f]">Description</FormLabel>
                   <FormControl>
-                    <Input placeholder="Brief description of the meeting" {...field} />
+                    <textarea
+                      className="flex min-h-28 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                      placeholder="Brief description of the meeting"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

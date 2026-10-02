@@ -135,6 +135,10 @@ Replace the example path with the event's public URL. The booking page validates
 
 ## Deployment
 
+### Platform Admin Access
+
+Set the non-secret `ADMIN_EMAILS` variable in the Cloudflare Worker's production environment to a comma-separated list of verified Clerk account emails, for example `admin@example.com,ops@example.com`. Admin access is disabled when this variable is unset. The admin page is read-only and available at `/dashboard/admin` to allowlisted accounts.
+
 The app deploys to [Vercel](https://vercel.com). Set the environment variables from the table above in your Vercel project settings before deploying:
 
 ```bash

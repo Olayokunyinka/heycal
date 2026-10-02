@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Calendar, Clock, Cloud, Home, Star, Trash2 } from "lucide-react";
+import { Calendar, Clock, Cloud, Home, ShieldCheck, Star, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { toast } from "sonner";
@@ -15,8 +15,11 @@ const navItems = [
   { icon: Trash2, label: "Trash", href: "/dashboard/trash" },
 ];
 
-export function Sidebar() {
+export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
   const pathname = usePathname();
+  const visibleNavItems = isAdmin
+    ? [...navItems, { icon: ShieldCheck, label: "Admin", href: "/dashboard/admin" }]
+    : navItems;
 
   const handleUtilityClick = (name: string) => {
     toast.info(`${name} feature coming soon!`);
@@ -42,7 +45,7 @@ export function Sidebar() {
 
       {/* Navigation Links */}
       <nav className="space-y-1 flex-1">
-        {navItems.map((item) => {
+        {visibleNavItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link
