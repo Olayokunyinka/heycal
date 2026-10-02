@@ -4,6 +4,9 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-04-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "vars": {
+    "ADMIN_EMAILS": "useclift@gmail.com,mrolayokun@gmail.com"
+  },
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
   "services": [
     {
